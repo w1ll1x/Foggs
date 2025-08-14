@@ -13,7 +13,6 @@
     <script src="https://kit.fontawesome.com/cf2efbd62f.js" crossorigin="anonymous"></script>
 
     <!-- FareHarbor (kept from original) -->
-    <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -76,8 +75,10 @@
             <a href="/taxi" class="btn btn-info text-white fw-semibold py-3 px-4 d-none d-sm-inline-block">Book Water Taxi</a>
             <!-- Shared button: Cruises -->
             <a href="https://fareharbor.com/embeds/book/foggswatertaxi/items/?flow=955616"
-               onclick="FareHarbor.show({slug: 'foggswatertaxi', flow: 955616, fullItems: true}); return false;"
-               class="btn btn-light fw-semibold py-3 px-4">Book Public Cruises</a>
+               class="btn btn-light fw-semibold py-3 px-4">
+                Book Public Cruises
+            </a>
+
         </div>
     </div>
 </section>
@@ -297,5 +298,6 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 </body>
 </html>
