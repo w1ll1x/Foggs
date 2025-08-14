@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Charters - Fogg's Water Taxi</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Icons / Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.webp" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.webp" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.webp" />
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Optional fonts/icons to match your original page -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/cf2efbd62f.js" crossorigin="anonymous"></script>
+
+    <!-- Mapbox GL -->
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+
+    <!-- Your custom CSS (optional) -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Meta (Facebook domain verification) -->
+    <meta name="facebook-domain-verification" content="odanadtzl0u0bp2kjxtd1c1cawwy5c" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PZGNQN1YC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2PZGNQN1YC');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !(function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+            if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+            t = b.createElement(e); t.async = !0; t.src = v;
+            s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+        })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1599431323888300');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1599431323888300&ev=PageView&noscript=1" />
+    </noscript>
+
+    <style>
+        :root {
+            /* Recreate Tailwind-ish cyan palette you used */
+            --cyan-300: #67e8f9;
+            --cyan-500: #06b6d4;
+            --cyan-700: #0e7490;
+        }
+        .bg-secondary { background-color: var(--cyan-500) !important; }
+        .bg-primary { background-color: var(--cyan-700) !important; }
+        .text-cyan-700 { color: var(--cyan-700) !important; }
+        .text-cyan-200 { color: #a5f3fc !important; }
+
+        /* NAV */
+        .navbar-brand img { height: 40px; }
+
+        /* HERO banner */
+        .hero-banner {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            display: grid;
+            place-items: center;
+            position: relative;
+        }
+        .hero-title {
+            color: #fff;
+            text-shadow: 0 2px 16px rgba(0,0,0,.45);
+            background: rgba(0,0,0,.15);
+            border-radius: .5rem;
+            padding: .75rem 1rem;
+        }
+
+        /* Section with faint background image overlay */
+
+
+        /* Cards mimic */
+        .soft-card { background: #f5f7f9; border-radius: .75rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.08); }
+
+        /* Large Groups carousel image fit */
+        .charter-carousel .carousel-item img { width: 100%; height: auto; object-fit: cover; display: block; }
+
+        /* Listings sidebar for Mapbox */
+        #listings { max-height: 500px; overflow-y: auto; }
+        #listings .listing { position: relative; padding-bottom: .5rem; margin-bottom: .75rem; }
+        #listings .listing::after { content:""; position:absolute; left:0; bottom:0; width:100%; height:4px; background: var(--cyan-500); border-radius: 999px; opacity:.85; }
+        #listings .listing.active { outline: 2px solid var(--cyan-500); border-radius: .5rem; padding: .5rem; }
+
+        /* Simple marker style (if you don't have a custom icon) */
+        .marker { width: 24px; height: 24px; background: var(--cyan-700); border: 2px solid #fff; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,.25); cursor: pointer; }
+    </style>
+</head>
+<body class="bg-white text-body">
+
+<!-- NAVBAR (kept consistent with home page) -->
+<nav class="navbar navbar-expand-md bg-white border-bottom sticky-top">
+    <div class="container-xl py-2">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/logo2.webp" alt="Fogg's Logo" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-md-center">
+                <li class="nav-item me-md-3"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="taxi.html">Water Taxi</a></li>
+                <li class="nav-item dropdown me-md-3">
+                    <a class="nav-link dropdown-toggle active" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
+                    <ul class="dropdown-menu shadow-sm" aria-labelledby="chartersDropdown">
+                        <li><a class="dropdown-item" href="charters.html">Private Charters</a></li>
+                        <li><a class="dropdown-item" href="bwoc.html">Beer Wine Oysters</a></li>
+                        <li><a class="dropdown-item" href="sunset.html">Wednesday Night Sunsets</a></li>
+                        <li><a class="dropdown-item" href="flotilla.html">Flotilla to Fight Cancer</a></li>
+                        <li><a class="dropdown-item" href="fireworks.html">4th of July Fireworks</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="events.html">All Events</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="tripIdeas.html">Trip Ideas</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="ourfleet.html">Our Fleet</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero-banner" style="background-image:url('img/charters.jpeg');">
+    <h1 class="display-3 fw-bold hero-title">Charters</h1>
+</header>
+
+<!-- MAIN CONTENT -->
+<section class="with-bg-image py-4 py-md-5">
+    <main class="container position-relative z-1 py-4 py-md-5">
+
+        <!-- Custom Charters intro -->
+        <section class="soft-card p-4 p-md-5 mb-4">
+            <h2 class="h2 fw-semibold mb-3 text-cyan-700">Custom Charters</h2>
+            <p class="fs-5 mb-0">
+                Located in the heart of downtown Portland, Maine, we offer a wide array of charter experiences tailored to
+                your needs. Whether you’re planning an intimate sunset cruise, a lobster bake on a secluded island, or a
+                corporate outing for your team, our fleet and crew stand ready to craft the perfect adventure on Casco Bay.
+            </p>
+        </section>
+
+        <!-- Small Groups -->
+        <section class="soft-card p-4 p-md-5 mb-4">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <h2 class="h3 fw-bold mb-2 text-cyan-700">Small Groups</h2>
+                    <p class="mb-3">Our small‑group charters are designed to offer personalized experiences for groups of up to six passengers. Perfect for anniversaries, family outings, or a day of island‑hopping.</p>
+                    <hr class="border-2" style="border-color: var(--cyan-300); opacity:1;" />
+                    <div class="fw-medium text-secondary">
+                        <div>$150 / hr <span class="fst-italic">(1‑hour minimum)</span></div>
+                        <div>After 10 PM: <span class="text-danger fw-semibold">+ $50 / hr</span></div>
+                        <div>After midnight: <span class="text-danger fw-semibold">+ $100 / hr</span></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/gizzy.webp" class="img-fluid rounded shadow" alt="Gizzy" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Large Groups -->
+        <section class="soft-card p-4 p-md-5 mb-4">
+            <div class="row g-4 align-items-center flex-md-row-reverse">
+                <div class="col-md-6">
+                    <h2 class="h3 fw-bold mb-2 text-cyan-700">Large Groups</h2>
+                    <p class="mb-3">Our two larger vessels, the <em>Casco Bay Cat</em> and the <em>Joseph S. Kennedy</em>, comfortably accommodate up to 49 passengers—ideal for weddings, reunions, and corporate events.</p>
+                    <hr class="border-2" style="border-color: var(--cyan-300); opacity:1;" />
+                    <div class="fw-medium text-secondary">
+                        <div>Under 20 guests: <strong>$300 / hr</strong> <span class="fst-italic">(2‑hour minimum)</span></div>
+                        <div>20 – 49 guests: <strong>$400 / hr</strong> <span class="fst-italic">(2‑hour minimum)</span></div>
+                        <div>After 10 PM: <span class="text-danger fw-semibold">+ $75 / hr</span></div>
+                        <div>After midnight: <span class="text-danger fw-semibold">+ $150 / hr</span></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="lgCarousel" class="carousel slide charter-carousel rounded overflow-hidden" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="img/LB1.jpeg" alt="Large Group Vessel 1" />
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/LB2.jpeg" alt="Large Group Vessel 2" />
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/LB3.jpeg" alt="Large Group Vessel 3" />
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/LB4.jpeg" alt="Large Group Vessel 4" />
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#lgCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#lgCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cancellations -->
+        <section class="soft-card p-4 p-md-5 mb-4">
+            <h2 class="h3 fw-bold mb-3 text-cyan-700">Cancellations</h2>
+            <p class="mb-0">We understand plans change. For a full refund, please provide notice at least <strong>48 hours</strong> in advance for small‑boat charters and <strong>30 days</strong> in advance for large‑boat charters. Weather‑related cancellations are fully refundable or may be rescheduled at no cost.</p>
+        </section>
+
+        <!-- Charter Highlights (Listings + Map) -->
+        <section class="soft-card p-4 p-md-5">
+            <div class="text-center mb-4">
+                <h2 class="h2 fw-bolder text-cyan-700 mb-2">Charter Highlights</h2>
+                <p class="text-secondary mx-auto" style="max-width: 48rem;">Explore some of our most popular routes and island stops. Click any marker on the map to learn more about what each location offers!</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Listings Sidebar -->
+                <aside id="listings" class="col-md-3 d-none d-md-block bg-white rounded shadow-sm p-3"></aside>
+                <!-- Map -->
+                <div class="col-md-9">
+                    <div id="map" class="rounded shadow" style="width:100%; height:500px;"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light py-4 mt-4">
+    <div class="container">
+        <div class="row text-center text-md-start g-3">
+            <div class="col-md-4">
+                <a class="d-block link-light text-decoration-none" href="tel:207-415-8493">207‑415‑8493</a>
+                <a class="d-block link-light text-decoration-none mt-2" href="mailto:reservations@foggswatertaxi.com">reservations@foggswatertaxi.com</a>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center gap-3 fs-4">
+                    <a class="link-light" href="https://www.facebook.com/FoggsWaterTaxi/"><i class="fab fa-facebook"></i></a>
+                    <a class="link-light" href="https://www.instagram.com/foggswatertaxi/"><i class="fab fa-instagram"></i></a>
+                    <a class="link-light" href="https://www.yelp.com/biz/foggs-water-taxi-and-charter-portland"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <a class="d-block link-light text-decoration-none" href="https://www.google.com/maps/place/Fogg's+Water+Taxi+and+Charters/@43.6561357,-70.2489642,18.47z">
+                    Maine Wharf<br />72 Commercial Street<br />Portland, ME 04101
+                </a>
+            </div>
+        </div>
+        <p class="pt-3 mt-3 border-top text-center small mb-0">&copy; 2025 foggswatertaxi.com</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Mapbox Script: ports from your Tailwind version, adapted for this layout -->
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoid2lsbGl4IiwiYSI6ImNrcmJndm82djRzd3AydGwzaHVpMHZvMWsifQ.5e7mpdQ_mgANhwEKDxomgw';
+
+    // Map bounds
+    const bounds = [
+        [-70.333580, 43.607766],
+        [-69.945737, 43.802661]
+    ];
+
+    // Init map
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/outdoors-v11',
+        center: [-70.176715, 43.678879],
+        zoom: 11.5,
+        maxZoom: 17,
+        minZoom: 11,
+        maxBounds: bounds
+    });
+
+    // Destinations GeoJSON
+    const destinations = {
+        type: 'FeatureCollection',
+        features: [
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.236729, 43.654750] }, properties: { location: 'Bug Light', description: 'Bug light is a small lighthouse located across the harbor' } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.188965, 43.690610] }, properties: { location: 'Cow Island' } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.192731, 43.682996] }, properties: { location: 'Diamond Cove', description: 'Historic Diamond Cove is a great place to pickup a mooring and go swimming on your charter, the island also has a great restaurant should you choose to stop for a bite.' } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.041057, 43.739533] }, properties: { location: 'Dolphin Marina', description: 'The restaurant at Dolphin Marina is an excellent stop for extended charters; consider pausing here for a delightful lunch.' } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.248623, 43.656128] }, properties: { location: 'Portland (Fogg Dock)', description: 'Our home base where all charters depart from, <strong>72 Commercial Street.</strong>' } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.207296, 43.623096] }, properties: { location: 'Portland Head Light', description: "It's true, iconic Portland Head Light is better viewed from the water!" } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.221638, 43.663309] }, properties: { location: 'Fort Gorges', description: 'Fort Gorges is a historic fort in Portland Harbor, if you time the tide right you can get off and explore!' } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.093074, 43.684092] }, properties: { location: 'Jewell Island', description: "Cocktail Cove on Jewel Island boasts a captivating example of Maine's rugged shoreline." } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.145778, 43.710592] }, properties: { location: 'Little Chebeague Island', description: 'Little Chebeague has a great sandy beach for swimming!' } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.199737, 43.655556] }, properties: { location: 'Peaks Island', description: 'Hop off your charter at Peaks Island to jump off the pier or to grab ice cream at the store!' } },
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.227179, 43.680974] }, properties: { location: 'Seal Rock', description: 'Seal Rock is a must see stop on your charter, the rock in portland harbor is a popular place to watch seals basking in the sun.' } }
+        ]
+    };
+
+    // Assign IDs for linking markers & listings
+    destinations.features.forEach((f, i) => { f.properties.id = i; });
+
+    map.on('load', function () {
+        map.addSource('places', { type: 'geojson', data: destinations });
+        buildLocationList(destinations);
+        addMarkers();
+    });
+
+    function addMarkers() {
+        destinations.features.forEach(function (marker) {
+            const el = document.createElement('div');
+            el.id = 'marker-' + marker.properties.id;
+            el.className = 'marker';
+
+            new mapboxgl.Marker(el, { offset: [0, -12] })
+                .setLngLat(marker.geometry.coordinates)
+                .addTo(map);
+
+            el.addEventListener('click', function (e) {
+                flyToStore(marker);
+                createPopUp(marker);
+                const activeItem = document.querySelector('#listings .active');
+                e.stopPropagation();
+                if (activeItem) activeItem.classList.remove('active');
+                const listing = document.getElementById('listing-' + marker.properties.id);
+                if (listing) listing.classList.add('active');
+            });
+        });
+    }
+
+    function buildLocationList(data) {
+        const listings = document.getElementById('listings');
+        data.features.forEach(function (store) {
+            const prop = store.properties;
+            const listing = document.createElement('div');
+            listing.id = 'listing-' + prop.id;
+            listing.className = 'listing';
+
+            const link = document.createElement('a');
+            link.href = 'javascript:void(0)';
+            link.id = 'link-' + prop.id;
+            link.className = 'fw-bold text-decoration-none';
+            link.innerText = prop.location;
+
+            listing.appendChild(link);
+            listings.appendChild(listing);
+
+            link.addEventListener('click', function () {
+                flyToStore(store);
+                createPopUp(store);
+                const activeItem = document.querySelector('#listings .active');
+                if (activeItem) activeItem.classList.remove('active');
+                listing.classList.add('active');
+            });
+        });
+    }
+
+    function flyToStore(feature) {
+        map.flyTo({ center: feature.geometry.coordinates, zoom: 14 });
+    }
+
+    function createPopUp(feature) {
+        const popUps = document.getElementsByClassName('mapboxgl-popup');
+        if (popUps[0]) popUps[0].remove();
+        new mapboxgl.Popup({ closeOnClick: true })
+            .setLngLat(feature.geometry.coordinates)
+            .setHTML(
+                '<h5 class="mb-1">' + feature.properties.location + '</h5>' +
+                '<hr class="my-2" />' +
+                '<p class="mb-0" style="font-size:14px;">' + (feature.properties.description || '') + '</p>'
+            )
+            .addTo(map);
+    }
+
+    map.addControl(new mapboxgl.NavigationControl());
+</script>
+
+</body>
+</html>

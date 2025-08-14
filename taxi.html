@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Taxi - Fogg's Water Taxi</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="img/apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180">
+    <link href="img/favicon-32x32.webp" rel="icon" sizes="32x32" type="image/png">
+    <link href="img/favicon-16x16.webp" rel="icon" sizes="16x16" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/cf2efbd62f.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+    <meta content="odanadtzl0u0bp2kjxtd1c1cawwy5c" name="facebook-domain-verification"/>
+    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PZGNQN1YC"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2PZGNQN1YC'); </script>
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1599431323888300');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" src="https://www.facebook.com/tr?id=1599431323888300&ev=PageView&noscript=1" width="1"/>
+    </noscript>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md bg-white border-bottom">
+    <div class="container-xl">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/fwt_logo.png" alt="Fogg's Logo" class="me-2" style="height:40px;" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-md-center">
+                <li class="nav-item me-md-3"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="taxi.html">Water Taxi</a></li>
+
+                <li class="nav-item dropdown me-md-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
+                    <ul class="dropdown-menu shadow-sm" aria-labelledby="chartersDropdown">
+                        <li><a class="dropdown-item" href="charters.html">Private Charters</a></li>
+                        <li><a class="dropdown-item" href="bwoc.html">Beer Wine Oysters</a></li>
+                        <li><a class="dropdown-item" href="sunset.html">Wednesday Night Sunsets</a></li>
+                        <li><a class="dropdown-item" href="flotilla.html">Flotilla to Fight Cancer</a></li>
+                        <li><a class="dropdown-item" href="fireworks.html">4th of July Fireworks</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="events.html">All Events</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item me-md-3"><a class="nav-link" href="tripIdeas.html">Trip Ideas</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="ourfleet.html">Our Fleet</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- (Optional) tiny helpers if not already on the page -->
+<style>
+    .with-bg-image { position: relative; isolation: isolate; }
+    .with-bg-image::before {
+        content:""; position:absolute; inset:0;
+        background:url('img/contour-lines.svg') center/cover no-repeat;
+        opacity:.5; pointer-events:none; z-index:0;
+    }
+</style>
+
+<!-- HERO (same feel as Charters page) -->
+<header class="hero-banner" style="background-image:url('img/taxi.jpeg');">
+    <h1 class="display-3 fw-bold hero-title">Water Taxi</h1>
+</header>
+
+<!-- THREE-COL SECTION (colors/background from your first page) -->
+<!-- FULL-WIDTH BLUE BACKGROUND (SVG) WRAPPER -->
+<section class="with-bg-image bg-secondary py-4 py-md-5">
+    <div class="container position-relative z-1">
+
+        <!-- TOP FEATURES / SERVICE, DESTINATIONS, FARES -->
+        <div class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
+            <div class="row g-4 text-center">
+                <div class="col-lg-4">
+                    <span class="material-symbols-outlined d-inline-block fs-1 mb-2">directions_boat</span>
+                    <h3 class="fw-semibold mb-2">Service</h3>
+                    <p class="mb-0">
+                        We offer year-round transportation to the islands of Casco Bay.
+                        All taxis are reservation based, and we do accept same-day
+                        reservations which can be made by phone.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <span class="material-symbols-outlined d-inline-block fs-1 mb-2">explore</span>
+                    <h3 class="fw-semibold mb-2">Destinations</h3>
+                    <p class="mb-0">
+                        A map of our destinations can be found below. Not sure where to
+                        travel? Check out our <a class="link-light fw-bold" href="tripIdeas.html">trip ideas page</a> for inspiration.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <span class="material-symbols-outlined d-inline-block fs-1 mb-2">local_activity</span>
+                    <h3 class="fw-semibold mb-2">Fares</h3>
+                    <p class="mb-0">
+                        Use the fare calculator below to estimate the cost of your trip.
+                        All fares are <strong>one-way flat rates for up to six people</strong>; we reserve the
+                        right to add other parties to your boat.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FARE CALCULATOR (centered in container) -->
+        <div class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
+            <div class="row g-3 align-items-end justify-content-center mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="fw-semibold mb-2">Fare Calculator</h2>
+                </div>
+
+                <!-- From -->
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <select class="form-select bg-white text-body" id="from" required>
+                        <option value="" selected>From:</option>
+                    </select>
+                </div>
+
+                <!-- To -->
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <select class="form-select bg-white text-body" id="to" required>
+                        <option value="" selected>To:</option>
+                    </select>
+                </div>
+
+                <!-- Departure time -->
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <select class="form-select bg-white text-body" id="deTime" required>
+                        <option value="" selected>Departure Time:</option>
+                        <optgroup label="Operating Hours">
+                            <option value="0">6:30AM - 10:00PM</option>
+                        </optgroup>
+                        <optgroup label="Off Hours">
+                            <option value="20">10:00PM - 12:00AM & 5:30AM - 6:30AM</option>
+                            <option value="55">12:00AM - 2:00AM & 4:30AM - 5:30AM</option>
+                            <option value="100">2:00AM - 4:30AM</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- Calculate button -->
+                <div class="col-sm-12 col-md-6 col-lg-2 d-grid">
+                    <button class="btn btn-light w-100 text-info fw-semibold" type="button" onclick="fareCalculator()">Calculate Fare</button>
+                </div>
+            </div>
+
+            <!-- Output -->
+            <div class="row" id="fare-output" style="display:none;">
+                <div class="col-12">
+                    <hr id="hr" style="display:none;" />
+                    <p id="fare" class="fs-5" style="display:none;"></p>
+                    <hr id="hr1" style="display:none;" />
+                    <p class="mb-1" id="prepay" style="display:none;">– Taxis outside operating hours require prepayment when booking.</p>
+                    <p class="mb-3" id="rs" style="display:none;">– Ask about a ride-share when booking to save $10.</p>
+                    <a href="tel:207-415-8493">
+                        <button class="btn btn-outline-light" id="button" type="button" style="display:none;">Call Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- LARGE-GROUP PRICING (Accordion) -->
+        <div class="bg-light rounded-4 p-4 p-md-5 mb-4">
+            <div class="accordion" id="accordion">
+                <div class="accordion-item" style="border: none;">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Need transport for a larger group? Click here to see pricing for our 49 person vessels
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                         data-bs-parent="#accordion">
+                        <div class="accordion-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>CAT One Way Rate</th>
+                                        <th>6:30 AM – 9:59 PM</th>
+                                        <th>10:00 PM – 11:59 PM</th>
+                                        <th>12:00 AM - 6:29 AM</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr><td>Saltwater Grill</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                    <tr><td>43 North</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                    <tr><td>Little Diamond</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                    <tr><td>House</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                    <tr><td>Cushing</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                    <tr><td>Peaks</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                    <tr><td>Great Diamond State Dock</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                    <tr><td>TEIA (Peaks)</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                    <tr><td>Diamond Cove</td><td>$450</td><td>$550</td><td>$650</td></tr>
+                                    <tr><td>Long</td><td>$500</td><td>$600</td><td>$700</td></tr>
+                                    <tr><td>Clapboard</td><td>$600</td><td>$700</td><td>$800</td></tr>
+                                    <tr><td>Chebeague Chandlers</td><td>$600</td><td>$700</td><td>$800</td></tr>
+                                    <tr><td>Cliff</td><td>$750</td><td>$850</td><td>$950</td></tr>
+                                    <tr><td>Chebeague Stone Pier</td><td>$850</td><td>$950</td><td>$1050</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!-- /accordion-body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESTINATIONS HEADING -->
+
+
+        <!-- MAP + LISTINGS -->
+        <div class="bg-light rounded-4 p-4 p-md-5 mb-4">
+            <div class=" text-cyan-700 fw-bold text-center mb-4">
+                <h2 class="mb-0">Destinations</h2>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-3 listings-section">
+                    <div class="listings light-color rounded" id="listings"></div>
+                </div>
+                <div class="col-sm-12 col-md-9">
+                    <div class="map rounded w-100" id="map"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAVORITE ISLANDS -->
+        <div class="bg-light rounded-4 p-4 p-md-5 mb-4">
+            <div class="text-center mb-4">
+                <h2 class="mb-1">Our Favorite Islands</h2>
+                <p class="text-secondary mb-0">Discover some of our favorite destinations in Casco Bay.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Diamond Cove -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                        <div class="w-100" style="aspect-ratio:1/1;">
+                            <div id="carouselDiamond" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselDiamond" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                    <button type="button" data-bs-target="#carouselDiamond" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#carouselDiamond" data-bs-slide-to="2"></button>
+                                </div>
+                                <div class="carousel-inner h-100 rounded-top">
+                                    <div class="carousel-item active h-100" data-bs-interval="5000">
+                                        <img src="img/DC1.webp" class="d-block w-100 h-100" alt="Diamond Cove 1" style="object-fit:cover;">
+                                    </div>
+                                    <div class="carousel-item h-100" data-bs-interval="5000">
+                                        <img src="img/DC2.webp" class="d-block w-100 h-100" alt="Diamond Cove 2" style="object-fit:cover;">
+                                    </div>
+                                    <div class="carousel-item h-100" data-bs-interval="5000">
+                                        <img src="img/DC3.webp" class="d-block w-100 h-100" alt="Diamond Cove 3" style="object-fit:cover;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDiamond" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselDiamond" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="sub-heading mb-2">Diamond Cove</h4>
+                            <p class="text-secondary flex-grow-1">
+                                A peaceful retreat offering waterfront dining, cozy accommodations, and scenic walking paths. Sunset views from here are some of the best in the bay.
+                            </p>
+                            <a href="#" class="btn btn-info text-white fw-semibold mt-auto">More Info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peaks Island -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                        <div class="w-100" style="aspect-ratio:1/1;">
+                            <div id="carouselPeaks" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselPeaks" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                    <button type="button" data-bs-target="#carouselPeaks" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#carouselPeaks" data-bs-slide-to="2"></button>
+                                </div>
+                                <div class="carousel-inner h-100 rounded-top">
+                                    <div class="carousel-item active h-100" data-bs-interval="5000">
+                                        <img src="img/peaks1.webp" class="d-block w-100 h-100" alt="Peaks Island 1" style="object-fit:cover;">
+                                    </div>
+                                    <div class="carousel-item h-100" data-bs-interval="5000">
+                                        <img src="img/peaks2.webp" class="d-block w-100 h-100" alt="Peaks Island 2" style="object-fit:cover;">
+                                    </div>
+                                    <div class="carousel-item h-100" data-bs-interval="5000">
+                                        <img src="img/peaks3.webp" class="d-block w-100 h-100" alt="Peaks Island 3" style="object-fit:cover;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPeaks" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselPeaks" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="sub-heading mb-2">Peaks Island</h4>
+                            <p class="text-secondary flex-grow-1">
+                                Known for its beaches, vibrant village, and scenic bike rides. A quick trip from the mainland makes it a favorite for both day trips and evening escapes.
+                            </p>
+                            <a href="#" class="btn btn-info text-white fw-semibold mt-auto">More Info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fort Gorges -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                        <div class="w-100" style="aspect-ratio:1/1;">
+                            <div id="carouselFort" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselFort" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                    <button type="button" data-bs-target="#carouselFort" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#carouselFort" data-bs-slide-to="2"></button>
+                                </div>
+                                <div class="carousel-inner h-100 rounded-top">
+                                    <div class="carousel-item active h-100" data-bs-interval="5000">
+                                        <img src="img/fort1.webp" class="d-block w-100 h-100" alt="Fort Gorges 1" style="object-fit:cover;">
+                                    </div>
+                                    <div class="carousel-item h-100" data-bs-interval="5000">
+                                        <img src="img/fort2.webp" class="d-block w-100 h-100" alt="Fort Gorges 2" style="object-fit:cover;">
+                                    </div>
+                                    <div class="carousel-item h-100" data-bs-interval="5000">
+                                        <img src="img/fort3.webp" class="d-block w-100 h-100" alt="Fort Gorges 3" style="object-fit:cover;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFort" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFort" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="sub-heading mb-2">Fort Gorges</h4>
+                            <p class="text-secondary flex-grow-1">
+                                This 19th-century granite fort is accessible only at low tide. Step back in time and explore weathered walls, hidden rooms, and breathtaking harbor views.
+                            </p>
+                            <a href="#" class="btn btn-info text-white fw-semibold mt-auto">More Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section CTA -->
+            <div class="text-center mt-4">
+                <a href="tripIdeas.html" class="btn btn-outline-info btn-lg">More Trip Ideas</a>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container-fluid padding">
+        <div class="row text-center align-items-center">
+            <div class="col-md-4">
+                <p><a href="tel: 207-415-8493">
+                    207-415-8493
+                </a>
+                    <br/>
+                    <br/>
+                    <a href="mailto: reservations@foggswatertaxi.com">
+                        reservations@foggswatertaxi.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <p class="social">
+                    <a href="https://www.facebook.com/FoggsWaterTaxi/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/foggswatertaxi/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.yelp.com/biz/foggs-water-taxi-and-charter-portland"><i class="fab fa-yelp"></i></a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    <a href="https://www.google.com/maps/place/Fogg's+Water+Taxi+and+Charters/@43.6561357,-70.2489642,18.47z/data=!4m5!3m4!1s0x4cb29c3f50677879:0x618f34828fe7fb07!8m2!3d43.65629!4d-70.2487871">
+                        Maine Wharf
+                        <br/>
+                        72 Commercial Street
+                        <br/>
+                        Portland, ME 04101
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="col-12 " style="text-align: center;">
+            <hr class="light"/>
+            <h5>&copy; 2023 foggswatertaxi.com</h5>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function showHide(divId) {
+        if (document.getElementById(divId).style.display === "none") {
+            document.getElementById(divId).style.display = "block";
+        } else {
+            document.getElementById(divId).style.display = "none";
+        }
+    }
+
+    const LOCATIONS = {
+        "Islands": [
+            { name: "Chebeague (Chandler Cove)", fare: 90,  fee: 0 },
+            { name: "Chebeague (Stone Pier)",    fare: 140, fee: 0 },
+            { name: "Chebeague (Boat Yard)",     fare: 140, fee: 0 },
+            { name: "Clapboard",                  fare: 85,  fee: 0 },
+            { name: "Cliff",                      fare: 100, fee: 0 },
+            { name: "Cow",                        fare: 75,  fee: 0 },
+            { name: "Cushing",                    fare: 65,  fee: 0 },
+            { name: "Diamond Cove",               fare: 75,  fee: 0 },
+            { name: "Eagle",                      fare: 300, fee: 0 },
+            { name: "Fort Gorges",                fare: 65,  fee: 0 },
+            { name: "Great Diamond",              fare: 65,  fee: 0 },
+            { name: "House",                      fare: 60,  fee: 0 },
+            { name: "Jewell",                     fare: 175, fee: 0 },
+            { name: "Little Chebeague",           fare: 95,  fee: 0 },
+            { name: "Little Diamond",             fare: 60,  fee: 0 },
+            { name: "Long",                       fare: 75,  fee: 0 },
+            { name: "Peaks",                      fare: 65,  fee: 0 },
+            { name: "Pumpkin Knob",               fare: 70,  fee: 0 },
+            { name: "Sand",                       fare: 105, fee: 0 }
+        ],
+        "Ports": [
+            { name: "Portland",               fare: 0,   fee: 0  },
+            { name: "Portland Yacht Services",fare: 80,  fee: 80 },
+            { name: "Bug Light",              fare: 40,  fee: 10 },
+            { name: "Cousins Island",         fare: 120, fee: 0  },
+            { name: "Centerboard",            fare: 40,  fee: 10 },
+            { name: "Dolphin Marina",         fare: 200, fee: 0  },
+            { name: "East End Beach",         fare: 60,  fee: 20 },
+            { name: "Falmouth",               fare: 120, fee: 40 },
+            { name: "Fore Points",            fare: 30,  fee: 10 },
+            { name: "Maine Yacht Center",     fare: 60,  fee: 30 },
+            { name: "Saltwater Grille",       fare: 40,  fee: 10 },
+            { name: "Southport",              fare: 60,  fee: 50 },
+            { name: "Spring Point",           fare: 60,  fee: 10 }
+        ]
+    };
+
+    function buildLocationSelect(selectEl) {
+        // Clear (keep placeholder)
+        for (let i = selectEl.options.length - 1; i >= 1; i--) {
+            selectEl.remove(i);
+        }
+        Object.entries(LOCATIONS).forEach(([groupLabel, items]) => {
+            const og = document.createElement("optgroup");
+            og.label = groupLabel;
+            items.forEach((loc, idx) => {
+                const opt = document.createElement("option");
+                opt.textContent = loc.name;
+                // store index path for lookup (group + index)
+                opt.value = `${groupLabel}|${idx}`;
+                selectEl.appendChild(opt);
+            });
+            selectEl.appendChild(og); // ensure grouping label appears correctly
+            // Move options into optgroup (DOM trick so labels render properly)
+            const added = Array.from(selectEl.querySelectorAll(`option:not([value=""])`))
+                .slice(-items.length);
+            added.forEach(o => og.appendChild(o));
+        });
+    }
+
+    function getLocationByValue(val) {
+        const [group, idxStr] = val.split("|");
+        const idx = parseInt(idxStr, 10);
+        const list = LOCATIONS[group] || [];
+        return list[idx];
+    }
+
+    // Initialize dropdowns on DOM ready
+    document.addEventListener("DOMContentLoaded", () => {
+        buildLocationSelect(document.getElementById("from"));
+        buildLocationSelect(document.getElementById("to"));
+    });
+
+    function fareCalculator() {
+        const fromSel = document.getElementById("from").value;
+        const toSel   = document.getElementById("to").value;
+        const deTime  = +document.getElementById("deTime").value;
+
+        const fareOutWrap = document.getElementById("fare-output");
+        const fareText    = document.getElementById("fare");
+        const hr          = document.getElementById("hr");
+        const hr1         = document.getElementById("hr1");
+        const prepay      = document.getElementById("prepay");
+        const rs          = document.getElementById("rs");
+        const button      = document.getElementById("button");
+
+        // Basic validation
+        if (!fromSel || !toSel || isNaN(deTime)) {
+            fareOutWrap.style.display = "block";
+            hr.style.display = "block";
+            fareText.style.display = "block";
+            fareText.textContent = "Please select a From, To, and Departure Time.";
+            hr1.style.display = "none";
+            prepay.style.display = "none";
+            rs.style.display = "none";
+            button.style.display = "none";
+            return;
+        }
+
+        const from = getLocationByValue(fromSel);
+        const to   = getLocationByValue(toSel);
+
+        // Base price: highest of (from.fee + to.fare) vs (to.fee + from.fare)
+        const base = Math.max(from.fee + to.fare, to.fee + from.fare);
+
+        // Time surcharge: simply add the selected surcharge
+        const total = base + deTime;
+
+        // Output
+        fareOutWrap.style.display = "block";
+        hr.style.display = "block";
+        fareText.style.display = "block";
+        fareText.textContent = `$${total}.00      Flat rate for up to six people.`;
+        hr1.style.display = "block";
+        button.style.display = "block";
+
+        // Notes
+        if (deTime > 0) {
+            prepay.style.display = "block";
+        } else {
+            prepay.style.display = "none";
+        }
+
+        if (deTime <= 20) {
+            rs.style.display = "block";
+        } else {
+            rs.style.display = "none";
+        }
+    }
+
+    if (!('remove' in Element.prototype)) {
+        Element.prototype.remove = function () {
+            if (this.parentNode) {
+                this.parentNode.removeChild(this);
+            }
+        };
+    }
+
+    mapboxgl.accessToken = 'pk.eyJ1Ijoid2lsbGl4IiwiYSI6ImNrcmJndm82djRzd3AydGwzaHVpMHZvMWsifQ.5e7mpdQ_mgANhwEKDxomgw';
+
+    /**
+     * Add the map to the page
+     */
+
+    const bounds = [
+        [-70.333580, 43.617766],
+        [-69.945737, 43.802661]
+
+    ];
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/outdoors-v11',
+        center: [-70.176715, 43.678879],
+        zoom: 11.5,
+        maxZoom: 17,
+        minZoom: 11,
+        maxBounds: bounds
+    });
+
+    const destinations = {
+        'type': 'FeatureCollection',
+        'features': [{
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [-70.236729, 43.654750]
+            },
+            'properties': {
+                'location': 'Bug Light',
+            }
+        },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.126630, 43.716226]
+                },
+                'properties': {
+                    'location': 'Chebeague Island (Chandler Cove)',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.108093, 43.751878]
+                },
+                'properties': {
+                    'location': 'Chebeague Island (Stone Pier)',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.110650, 43.729781]
+                },
+                'properties': {
+                    'location': 'Chebeague Island (Boat Yard)',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.194028, 43.716981]
+                },
+                'properties': {
+                    'location': 'Clapboard Island',
+
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.109613, 43.694933]
+                },
+                'properties': {
+                    'location': 'Cliff Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.139334, 43.751908]
+                },
+                'properties': {
+                    'location': 'Cousins Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.188965, 43.690610]
+                },
+                'properties': {
+                    'location': 'Cow Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.209826, 43.641432]
+                },
+                'properties': {
+                    'location': 'Cushing Island (Civilian Dock)',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.197774, 43.644857]
+                },
+                'properties': {
+                    'location': 'Cushing Island (Government Dock)',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.192731, 43.682996]
+                },
+                'properties': {
+                    'location': 'Diamond Cove',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.041057, 43.739533]
+                },
+                'properties': {
+                    'location': 'Dolphin Marina',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.052997, 43.711940]
+                },
+                'properties': {
+                    'location': 'Eagle Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.241776, 43.670771]
+                },
+                'properties': {
+                    'location': 'East End Beach',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.205558, 43.729980]
+                },
+                'properties': {
+                    'location': 'Falmouth Anchorage',
+
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.248623, 43.656128]
+                },
+                'properties': {
+                    'location': 'Portland (Fogg Dock)',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.221638, 43.663309]
+                },
+                'properties': {
+                    'location': 'Fort Gorges',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.199313, 43.671472]
+                },
+                'properties': {
+                    'location': 'Great Diamond Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.209449, 43.654481]
+                },
+                'properties': {
+                    'location': 'House Island',
+
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.093074, 43.684092]
+                },
+                'properties': {
+                    'location': 'Jewell Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.145778, 43.710592]
+                },
+                'properties': {
+                    'location': 'Little Chebeague Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.209856, 43.663065]
+                },
+                'properties': {
+                    'location': 'Little Diamond Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.128796, 43.755499]
+                },
+                'properties': {
+                    'location': 'Little John Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.164611, 43.691221]
+                },
+                'properties': {
+                    'location': 'Long Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.252104, 43.678097]
+                },
+                'properties': {
+                    'location': 'Maine Yacht Center',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.199737, 43.655556]
+                },
+                'properties': {
+                    'location': 'Peaks Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.192430, 43.669741]
+                },
+                'properties': {
+                    'location': 'Peaks Island (TEI)',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.263908, 43.643710]
+                },
+                'properties': {
+                    'location': 'Portland Yacht Services',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.183211, 43.674725]
+                },
+                'properties': {
+                    'location': 'Pumpkin Knob',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.243161, 43.650501]
+                },
+                'properties': {
+                    'location': 'Saltwater Grille',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.106706, 43.714510]
+                },
+                'properties': {
+                    'location': 'Sand Island',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.252436, 43.642990]
+                },
+                'properties': {
+                    'location': 'Southport Marine',
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.230438, 43.650763]
+                },
+                'properties': {
+                    'location': 'Spring Point',
+                }
+            }
+        ]
+    };
+
+    /**
+     * Assign a unique id to each store. You'll use this `id`
+     * later to associate each point on the map with a listing
+     * in the sidebar.
+     */
+    destinations.features.forEach(function (store, i) {
+        store.properties.id = i;
+    });
+
+    /**
+     * Wait until the map loads to make changes to the map.
+     */
+    map.on('load', function () {
+        /**
+         * This is where your '.addLayer()' used to be, instead
+         * add only the source without styling a layer
+         */
+        map.addSource('places', {
+            'type': 'geojson',
+            'data': destinations
+        });
+
+        /**
+         * Add all the things to the page:
+         * - The location listings on the side of the page
+         * - The markers onto the map
+         */
+        buildLocationList(destinations);
+        addMarkers();
+    });
+
+    /**
+     * Add a marker to the map for every store listing.
+     **/
+    function addMarkers() {
+        /* For each feature in the GeoJSON object above: */
+        destinations.features.forEach(function (marker) {
+            /* Create a div element for the marker. */
+            const el = document.createElement('div');
+            /* Assign a unique `id` to the marker. */
+            el.id = 'marker-' + marker.properties.id;
+            /* Assign the `marker` class to each marker for styling. */
+            el.className = 'marker';
+
+            /**
+             * Create a marker using the div element
+             * defined above and add it to the map.
+             **/
+            new mapboxgl.Marker(el, {
+                offset: [0, -23]
+            })
+                .setLngLat(marker.geometry.coordinates)
+                .addTo(map);
+
+            /**
+             * Listen to the element and when it is clicked, do three things:
+             * 1. Fly to the point
+             * 2. Close all other popups and display popup for clicked store
+             * 3. Highlight listing in sidebar (and remove highlight for all other listings)
+             **/
+            el.addEventListener('click', function (e) {
+                /* Fly to the point */
+                flyToStore(marker);
+                /* Close all other popups and display popup for clicked store */
+                createPopUp(marker);
+                /* Highlight listing in sidebar */
+                const activeItem = document.getElementsByClassName('active');
+                e.stopPropagation();
+                if (activeItem[0]) {
+                    activeItem[0].classList.remove('active');
+                }
+                const listing = document.getElementById(
+                    'listing-' + marker.properties.id
+                );
+                listing.classList.add('active');
+            });
+        });
+    }
+
+    /**
+     * Add a listing for each store to the sidebar.
+     **/
+    function buildLocationList(data) {
+        data.features.forEach(function (store) {
+            /**
+             * Create a shortcut for `store.properties`,
+             * which will be used several times below.
+             **/
+            const prop = store.properties;
+
+            /* Add a new listing section to the sidebar. */
+            const listings = document.getElementById('listings');
+            const listing = listings.appendChild(document.createElement('div'));
+            /* Assign a unique `id` to the listing. */
+            listing.id = 'listing-' + prop.id;
+            /* Assign the `item` class to each listing for styling. */
+            listing.className = 'item';
+
+            /* Add the link to the individual listing created above. */
+            const link = listing.appendChild(document.createElement('a'));
+            link.href = 'javascript:void();';
+            link.className = 'title';
+            link.id = 'link-' + prop.id;
+            link.innerHTML = prop.location;
+
+            /* Add details to the individual listing. */
+
+
+            /**
+             * Listen to the element and when it is clicked, do four things:
+             * 1. Update the `currentFeature` to the store associated with the clicked link
+             * 2. Fly to the point
+             * 3. Close all other popups and display popup for clicked store
+             * 4. Highlight listing in sidebar (and remove highlight for all other listings)
+             **/
+            link.addEventListener('click', function () {
+                for (let i = 0; i < data.features.length; i++) {
+                    if (this.id === 'link-' + data.features[i].properties.id) {
+                        const clickedListing = data.features[i];
+                        flyToStore(clickedListing);
+                        createPopUp(clickedListing);
+                    }
+                }
+                const activeItem = document.getElementsByClassName('active');
+                if (activeItem[0]) {
+                    activeItem[0].classList.remove('active');
+                }
+                this.parentNode.classList.add('active');
+            });
+        });
+    }
+
+    /**
+     * Use Mapbox GL JS's `flyTo` to move the camera smoothly
+     * a given center point.
+     **/
+    function flyToStore(currentFeature) {
+        map.flyTo({
+            center: currentFeature.geometry.coordinates,
+            zoom: 14
+        });
+    }
+
+    /**
+     * Create a Mapbox GL JS `Popup`.
+     **/
+    function createPopUp(currentFeature) {
+        const popUps = document.getElementsByClassName('mapboxgl-popup');
+        if (popUps[0]) popUps[0].remove();
+        const popup = new mapboxgl.Popup({
+            closeOnClick: true
+        })
+            .setLngLat(currentFeature.geometry.coordinates)
+            .setHTML(
+                '<h4>' +
+                currentFeature.properties.location +
+                '</h4>'
+            )
+            .addTo(map);
+    }
+
+    map.addControl(new mapboxgl.NavigationControl());
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home - Fogg's Water Taxi (Bootstrap)</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Optional fonts/icons to match your original page -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/cf2efbd62f.js" crossorigin="anonymous"></script>
+
+    <!-- FareHarbor (kept from original) -->
+    <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-white border-bottom">
+    <div class="container-xl">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/fwt_logo.png" alt="Fogg's Logo" class="me-2" style="height:40px;" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-md-center">
+                <li class="nav-item me-md-3"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="taxi.html">Water Taxi</a></li>
+
+                <li class="nav-item dropdown me-md-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
+                    <ul class="dropdown-menu shadow-sm" aria-labelledby="chartersDropdown">
+                        <li><a class="dropdown-item" href="charters.html">Private Charters</a></li>
+                        <li><a class="dropdown-item" href="bwoc.html">Beer Wine Oysters</a></li>
+                        <li><a class="dropdown-item" href="sunset.html">Wednesday Night Sunsets</a></li>
+                        <li><a class="dropdown-item" href="flotilla.html">Flotilla to Fight Cancer</a></li>
+                        <li><a class="dropdown-item" href="fireworks.html">4th of July Fireworks</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="events.html">All Events</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item me-md-3"><a class="nav-link" href="tripIdeas.html">Trip Ideas</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="ourfleet.html">Our Fleet</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- HERO -->
+<header class="hero-banner" style="background-image:url('img/ourfleet.jpeg');">
+    <h1 class="display-3 fw-bold hero-title">Our Fleet</h1>
+</header>
+<section class="py-4 py-md-5 bg-secondary">
+    <div class="container">
+        <div class="row align-items-center bg-primary text-white rounded-3 p-3 p-md-4 shadow-sm">
+            <div class="col-12">
+                <h2 class="h2 fw-semibold mb-3 text-center text-md-start">Our Fleet, Built at Our Boatyard</h2>
+
+                <p class="fs-5">
+                    At the heart of our operations lies a legacy of craftsmanship and passion for the sea. Over four decades ago,
+                    Dennis Fogg laid the foundation for Fogg's Boatworks with a vision of building unparalleled custom boats. In
+                    2004, this vision materialized into Foggcrafts—welded aluminum alloy boats that embody classic elegance,
+                    efficiency, and durability.
+                </p>
+
+                <p class="mb-0">
+                    Under Dennis’s guidance, sons Patrick and Eben have grown the legacy, pushing boundaries in design and
+                    innovation. Today, these boats are not only the backbone of our taxi and charter service—they also work in
+                    many roles across the bay, reflecting our commitment to quality and service. Whether you’re interested in our
+                    <a href="taxi.html" class="link-light fw-semibold">Water Taxi</a>,
+                    <a href="events.html" class="link-light fw-semibold">Public Charter</a>, or
+                    <a href="charters.html" class="link-light fw-semibold">Private Charter</a> services, our custom-built boats
+                    promise an unmatched experience. For a deeper dive into our boat-building journey, visit
+                    <a href="https://www.foggsboatwork.com" class="link-light fw-semibold" target="_blank" rel="noopener">foggsboatwork.com</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="container-fluid px-md-5 with-bg-image-light py-4 py-md-5">
+    <!-- 1/2/3 responsive grid -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+        <!-- Martine -->
+        <div class="col d-flex">
+            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                <div class="w-100" style="aspect-ratio:1/1;">
+                    <div id="carouselMartine" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselMartine" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#carouselMartine" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselMartine" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner h-100 rounded-top">
+                            <div class="carousel-item active h-100" data-bs-interval="5000">
+                                <img src="img/MartineCard1.webp" class="d-block w-100 h-100" alt="Martine 1" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/MartineCard2.webp" class="d-block w-100 h-100" alt="Martine 2" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/MartineCard3.webp" class="d-block w-100 h-100" alt="Martine 3" style="object-fit:cover;">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMartine" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselMartine" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h4 class="mb-2">Martine</h4>
+                    <p class="">
+                        The Martine is our red taxi with outside bench seating, a full cabin, bathroom, and Bluetooth sound system.
+                    </p>
+                    <table class="mt-auto table table-bordered mb-0">
+                        <tbody>
+                        <tr>
+                            <td colspan="2"><strong>Length:</strong> 28ft</td>
+                            <td colspan="2"><strong>Beam:</strong> 7ft</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Capacity:</strong> 6 people</td>
+                            <td colspan="2"><strong>Power:</strong> Suzuki 300</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Silver Lady -->
+        <div class="col d-flex">
+            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                <div class="w-100" style="aspect-ratio:1/1;">
+                    <div id="carouselSilver" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselSilver" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#carouselSilver" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselSilver" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner h-100 rounded-top">
+                            <div class="carousel-item active h-100" data-bs-interval="5000">
+                                <img src="img/SilverCard1.webp" class="d-block w-100 h-100" alt="Silver Lady 1" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/SilverCard2.webp" class="d-block w-100 h-100" alt="Silver Lady 2" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/SilverCard3.webp" class="d-block w-100 h-100" alt="Silver Lady 3" style="object-fit:cover;">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSilver" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSilver" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h4 class="mb-2">Silver Lady</h4>
+                    <p class="">
+                        The Silver Lady is our silver taxi with outside bench seating, a full cabin, bathroom, and Bluetooth sound system.
+                    </p>
+                    <table class="mt-auto table table-bordered mb-0">
+                        <tbody>
+                        <tr>
+                            <td colspan="2"><strong>Length:</strong> 28ft</td>
+                            <td colspan="2"><strong>Beam:</strong> 7ft</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Capacity:</strong> 6 people</td>
+                            <td colspan="2"><strong>Power:</strong> Suzuki 200</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vesta Merle -->
+        <div class="col d-flex">
+            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                <div class="w-100" style="aspect-ratio:1/1;">
+                    <div id="carouselMerle" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselMerle" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#carouselMerle" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselMerle" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner h-100 rounded-top">
+                            <div class="carousel-item active h-100" data-bs-interval="5000">
+                                <img src="img/MerleCard1.webp" class="d-block w-100 h-100" alt="Vesta Merle 1" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/MerleCard2.webp" class="d-block w-100 h-100" alt="Vesta Merle 2" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/MerleCard3.webp" class="d-block w-100 h-100" alt="Vesta Merle 3" style="object-fit:cover;">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMerle" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselMerle" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h4 class="mb-2">Vesta Merle</h4>
+                    <p class="">
+                        The Vesta Merle is our largest taxi with outside bench seating, a full cabin, bathroom, and Bluetooth sound system.
+                    </p>
+                    <table class="mt-auto table table-bordered mb-0">
+                        <tbody>
+                        <tr>
+                            <td colspan="2"><strong>Length:</strong> 29ft</td>
+                            <td colspan="2"><strong>Beam:</strong> 8ft</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Capacity:</strong> 6 people</td>
+                            <td colspan="2"><strong>Power:</strong> Suzuki 350</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gizzy -->
+        <div class="col d-flex">
+            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                <div class="w-100" style="aspect-ratio:1/1;">
+                    <div id="carouselGizzy" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselGizzy" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#carouselGizzy" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselGizzy" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner h-100 rounded-top">
+                            <div class="carousel-item active h-100" data-bs-interval="5000">
+                                <img src="img/GizzyCard1.webp" class="d-block w-100 h-100" alt="Gizzy 1" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/GizzyCard2.webp" class="d-block w-100 h-100" alt="Gizzy 2" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/GizzyCard3.webp" class="d-block w-100 h-100" alt="Gizzy 3" style="object-fit:cover;">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGizzy" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGizzy" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h4 class="mb-2">Gizzy</h4>
+                    <p class="">
+                        The Gizzy is our blue cuddy cabin with a canvas cover. It has a head, Bluetooth sound system, and plenty of comfortable seating. We use the Gizzy primarily for small charters.
+                    </p>
+                    <table class="mt-auto table table-bordered mb-0">
+                        <tbody>
+                        <tr>
+                            <td colspan="2"><strong>Length:</strong> 27ft</td>
+                            <td colspan="2"><strong>Beam:</strong> 7ft</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Capacity:</strong> 6 people</td>
+                            <td colspan="2"><strong>Power:</strong> Yamaha 200</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lawman -->
+        <div class="col d-flex">
+            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                <div class="w-100" style="aspect-ratio:1/1;">
+                    <div id="carouselLawman" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselLawman" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#carouselLawman" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselLawman" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner h-100 rounded-top">
+                            <div class="carousel-item active h-100" data-bs-interval="5000">
+                                <img src="img/LawmanCard1.webp" class="d-block w-100 h-100" alt="Lawman 1" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/LawmanCard2.webp" class="d-block w-100 h-100" alt="Lawman 2" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/LawmanCard3.webp" class="d-block w-100 h-100" alt="Lawman 3" style="object-fit:cover;">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselLawman" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselLawman" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h4 class="mb-2">Lawman</h4>
+                    <p class="">
+                        The Lawman is our flat-bottom aluminum-hulled boat with seating in both the stern and bow. We primarily use the Lawman for beach drops.
+                    </p>
+                    <table class="mt-auto table table-bordered mb-0">
+                        <tbody>
+                        <tr>
+                            <td colspan="2"><strong>Length:</strong> 18ft</td>
+                            <td colspan="2"><strong>Beam:</strong> 6ft</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Capacity:</strong> 6 people</td>
+                            <td colspan="2"><strong>Power:</strong> Tohatsu 150</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Casco Bay Cat -->
+        <div class="col d-flex">
+            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                <div class="w-100" style="aspect-ratio:1/1;">
+                    <div id="carouselCat" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselCat" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#carouselCat" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselCat" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#carouselCat" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#carouselCat" data-bs-slide-to="4"></button>
+                            <button type="button" data-bs-target="#carouselCat" data-bs-slide-to="5"></button>
+                        </div>
+                        <div class="carousel-inner h-100 rounded-top">
+                            <div class="carousel-item active h-100" data-bs-interval="5000">
+                                <img src="img/CatCard1.webp" class="d-block w-100 h-100" alt="Casco Bay Cat 1" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/CatCard2.webp" class="d-block w-100 h-100" alt="Casco Bay Cat 2" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/CatCard3.webp" class="d-block w-100 h-100" alt="Casco Bay Cat 3" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/CatCard4.webp" class="d-block w-100 h-100" alt="Casco Bay Cat 4" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/CatCard5.webp" class="d-block w-100 h-100" alt="Casco Bay Cat 5" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/CatCard6.webp" class="d-block w-100 h-100" alt="Casco Bay Cat 6" style="object-fit:cover;">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCat" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselCat" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h4 class="mb-2">Casco Bay Cat</h4>
+                    <p class="">
+                        The Casco Bay Cat is our catamaran with a walk-around deck, tons of seating, an epic Bluetooth sound system, a full-size head (bathroom), and a comfortably spacious cabin.
+                    </p>
+                    <table class="mt-auto table table-bordered mb-0">
+                        <tbody>
+                        <tr>
+                            <td colspan="2"><strong>Length:</strong> 46ft</td>
+                            <td colspan="2"><strong>Beam:</strong> 15ft</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Capacity:</strong> 49 people</td>
+                            <td colspan="2"><strong>Power:</strong> 2× Suzuki 300</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- UB85 Joseph S. Kennedy -->
+        <div class="col d-flex">
+            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+                <div class="w-100" style="aspect-ratio:1/1;">
+                    <div id="carouselUB" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselUB" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#carouselUB" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselUB" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner h-100 rounded-top">
+                            <div class="carousel-item active h-100" data-bs-interval="5000">
+                                <img src="img/UBCard1.webp" class="d-block w-100 h-100" alt="UB 1" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/UBCard2.webp" class="d-block w-100 h-100" alt="UB 2" style="object-fit:cover;">
+                            </div>
+                            <div class="carousel-item h-100" data-bs-interval="5000">
+                                <img src="img/UBCard3.webp" class="d-block w-100 h-100" alt="UB 3" style="object-fit:cover;">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselUB" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselUB" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h4 class="mb-2">UB85 Joseph S. Kennedy</h4>
+                    <p class="">
+                        The Joseph S. Kennedy is a 50 ft. Navy launch built in 1985. We refitted it as a charter boat which can accommodate 49 people. The Kennedy has a head as well as a Bluetooth sound system.
+                    </p>
+                    <table class="mt-auto table table-bordered mb-0">
+                        <tbody>
+                        <tr>
+                            <td colspan="2"><strong>Length:</strong> 50ft</td>
+                            <td colspan="2"><strong>Beam:</strong> 15ft</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Capacity:</strong> 49 people</td>
+                            <td colspan="2"><strong>Power:</strong> Inboard</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--- Footer -->
+<footer class="footer">
+    <div class="container-fluid padding">
+        <div class="row text-center align-items-center">
+            <div class="col-md-4">
+                <p><a href="tel: 207-415-8493">
+                    207-415-8493
+                </a>
+                    <br/>
+                    <br/>
+                    <a href="mailto: reservations@foggswatertaxi.com">
+                        reservations@foggswatertaxi.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <p class="social">
+                    <a href="https://www.facebook.com/FoggsWaterTaxi/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/foggswatertaxi/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.yelp.com/biz/foggs-water-taxi-and-charter-portland"><i class="fab fa-yelp"></i></a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    <a href="https://www.google.com/maps/place/Fogg's+Water+Taxi+and+Charters/@43.6561357,-70.2489642,18.47z/data=!4m5!3m4!1s0x4cb29c3f50677879:0x618f34828fe7fb07!8m2!3d43.65629!4d-70.2487871">
+                        Maine Wharf
+                        <br/>
+                        72 Commercial Street
+                        <br/>
+                        Portland, ME 04101
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="col-12 " style="text-align: center;">
+            <hr class="light"/>
+            <h5>&copy; 2023 foggswatertaxi.com</h5>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

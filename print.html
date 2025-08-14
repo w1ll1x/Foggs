@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Print Log - Fogg's Water Taxi</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.webp">
+    <link href="css/log_stylesheet.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+
+<body>
+<br/>
+<br/>
+
+<div class="col-12 row-sm d-flex align-items-stretch">
+    <table onload="window.print()">
+        <tr>
+            <th></th>
+            <th>Time</th>
+            <th>From</th>
+            <th>To</th>
+            <th>POB</th>
+            <th>Fare</th>
+            <th>Payment</th>
+            <th>Tip</th>
+            <th>RS</th>
+        </tr>
+    </table>
+</div>
+<br>
+<div class="col-12 row-sm d-flex align-items-stretch">
+    <table>
+        <tr>
+            <td>
+                <strong>Employee cut:</strong>
+                <div id="empCut"></div>
+            </td>
+            <td>
+                <strong>Total Cash:</strong>
+                <div id="cash"></div>
+            </td>
+            <td>
+                <strong>Total Tips:</strong>
+                <div id="tips"></div>
+            </td>
+            <td>
+                <strong>Cash Remaining:</strong>
+                <div id="cashRemaining"></div>
+            </td>
+            <td>
+                <strong>Total Owed:</strong>
+                <div id="totalPay"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br>
+<br>
+
+
+<style>
+    table{
+        font-size: 20px;
+    }
+</style>
+
+<script>
+    let table = document.querySelector('table')
+
+    table.innerHTML = localStorage.getItem("table")
+
+    const cells = table.getElementsByTagName('td');
+
+    const times = [];
+    const fares = [];
+    let tips = [];
+
+    let totalTips = 0;
+    let totalCash = 0;
+    let fareCut = 0.0;
+
+    for (let i = 1; i < cells.length; i += 9) {
+        times.push(cells[i].innerText)
+    }
+    for (let i = 5; i < cells.length; i += 9) {
+        fares.push(parseFloat(cells[i].innerText))
+    }
+    for (let i = 6; i < cells.length; i += 9) {
+        if (cells[i].innerText === "Cash") {
+            totalCash += parseFloat(cells[i - 1].innerText)
+        }
+    }
+    for (let i = 7; i < cells.length; i += 9) {
+        tips.push(parseFloat(cells[i].innerText))
+    }
+
+
+    let time;
+    for (let i = 0; i < times.length; i++) {
+        time = times[i];
+        if ((time >= "22:30" && time < "24:00") || (time >= "05:30" && time < "06:30")) {
+            fareCut += .27 * fares[i];
+        } else if ((time >= "00:00" && time < "02:00") || (time >= "04:30" && time < "05:30")) {
+            fareCut += .4 * fares[i];
+        } else if (time >= "02:00" && time < "04:30") {
+            fareCut += .5 * fares[i];
+        } else {
+            fareCut += .2 * fares[i]
+        }
+        totalTips += tips[i]
+    }
+
+    document.getElementById('empCut').innerHTML = fareCut.toFixed(2);
+    document.getElementById('tips').innerHTML = totalTips.toFixed(2);
+    document.getElementById('cash').innerHTML = totalCash.toFixed(2);
+
+    if (totalCash - totalTips >= 0) {
+        document.getElementById('cashRemaining').innerHTML = (totalCash - totalTips).toFixed(2);
+        document.getElementById('totalPay').innerHTML = fareCut.toFixed(2);
+    } else {
+      console.log("here")
+        document.getElementById('cashRemaining').innerHTML = "0.00";
+        document.getElementById('totalPay').innerHTML = (Math.abs(totalCash - totalTips) + fareCut).toFixed(2);
+    }
+</script>
+</body>
+</html>

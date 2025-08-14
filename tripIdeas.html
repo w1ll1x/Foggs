@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trip Ideas - Fogg's Water Taxi</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="img/apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180">
+    <link href="img/favicon-32x32.webp" rel="icon" sizes="32x32" type="image/png">
+    <link href="img/favicon-16x16.webp" rel="icon" sizes="16x16" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/cf2efbd62f.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+    <meta content="odanadtzl0u0bp2kjxtd1c1cawwy5c" name="facebook-domain-verification"/>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PZGNQN1YC"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script> window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-2PZGNQN1YC'); </script>
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1599431323888300');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" src="https://www.facebook.com/tr?id=1599431323888300&ev=PageView&noscript=1" width="1"/>
+    </noscript>
+</head>
+
+<body>
+<nav class="navbar navbar-custom navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img alt="logo" class="link-img home-link" src="img/logo2.webp"></a>
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+            <span class="material-symbols-outlined">
+menu
+</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto"> <!-- Modified class: ms-auto -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="taxi.html" >Taxi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="charters.html">Charters</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="events.html"
+                       id="navbarDropdown" role="button">
+                        Events
+                    </a>
+                    <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+                        <!-- Dropdown links go here -->
+                        <li><a class="dropdown-item" href="livemusic.html">Happy Hour Cruise</a></li>
+                        <li><a class="dropdown-item" href="bwoc.html">Beer Wine Oysters</a></li>
+                        <li><a class="dropdown-item" href="sunset.html">Wednesday Night Sunsets</a></li>
+                        <li><a class="dropdown-item" href="flotilla.html">Flotilla to Fight Cancer</a></li>
+                        <li><a class="dropdown-item" href="fireworks.html">4th of July Fireworks</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="events.html">All Events</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tripIdeas.html" style="color: #e33d26;">Trip Ideas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ourfleet.html">Our Fleet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid tripsImage">
+
+</div>
+
+<div class="row bg-primary text-white p-3 p-md-5 align-items-center">
+    <h2 class="sub-heading">Not sure where to travel? We've got you covered!</h2>
+    <p class="paragraph">
+        We offer a wide array of island excursions tailored to your preferences. For those keen on exploring nearby
+        destinations, Peaks Island and Diamond Cove are just a stone's throw away from Portland, Maine. For the more
+        adventurous, consider an overnight stay on an island, with camping options available on the secluded beaches of
+        Little Chebeague or picturesque Jewell Island. If you're pressed for time or looking for a brief escape, our
+        short excursions are perfect; perhaps a visit to historic Fort Gorges or a quick trip across the harbor to check
+        out Bug Light. Our goal is to help you experience Portland Harbor and Casco Bay at your own pace, ensuring you
+        experience the best the region has to offer. Whether you're interested in a full-fledged Charter or just a quick
+        tour, we're here to facilitate your island adventure.
+    </p>
+</div>
+
+<section class="py-4 py-md-5 bg-secondary with-bg-image">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Diamond Cove -->
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column bg-primary">
+                    <div class="w-100" style="aspect-ratio:1/1;">
+                        <div id="carouselDiamond" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselDiamond" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carouselDiamond" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carouselDiamond" data-bs-slide-to="2"></button>
+                            </div>
+                            <div class="carousel-inner h-100 rounded-top">
+                                <div class="carousel-item active h-100" data-bs-interval="5000">
+                                    <img src="img/DC1.webp" class="d-block w-100 h-100" alt="Diamond Cove 1" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/DC2.webp" class="d-block w-100 h-100" alt="Diamond Cove 2" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/DC3.webp" class="d-block w-100 h-100" alt="Diamond Cove 3" style="object-fit:cover;">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDiamond" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselDiamond" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body d-flex flex-column  text-white">
+                        <h4 class="sub-heading mb-2">Diamond Cove</h4>
+                        <p class="flex-grow-1">
+                            A peaceful retreat offering waterfront dining, cozy accommodations, and scenic walking paths. Sunset views from here are some of the best in the bay.
+                        </p>
+                        <a href="#" class="btn btn-info text-white fw-semibold mt-auto">More Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Peaks Island -->
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column bg-primary text-white">
+                    <div class="w-100" style="aspect-ratio:1/1;">
+                        <div id="carouselPeaks" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselPeaks" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carouselPeaks" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carouselPeaks" data-bs-slide-to="2"></button>
+                            </div>
+                            <div class="carousel-inner h-100 rounded-top">
+                                <div class="carousel-item active h-100" data-bs-interval="5000">
+                                    <img src="img/peaks1.webp" class="d-block w-100 h-100" alt="Peaks Island 1" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/peaks2.webp" class="d-block w-100 h-100" alt="Peaks Island 2" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/peaks3.webp" class="d-block w-100 h-100" alt="Peaks Island 3" style="object-fit:cover;">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPeaks" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselPeaks" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="sub-heading mb-2">Peaks Island</h4>
+                        <p class=" flex-grow-1">
+                            Known for its beaches, vibrant village, and scenic bike rides. A quick trip from the mainland makes it a favorite for both day trips and evening escapes.
+                        </p>
+                        <a href="#" class="btn btn-info text-white fw-semibold mt-auto">More Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fort Gorges -->
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column bg-primary text-white">
+                    <div class="w-100" style="aspect-ratio:1/1;">
+                        <div id="carouselFort" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselFort" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carouselFort" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carouselFort" data-bs-slide-to="2"></button>
+                            </div>
+                            <div class="carousel-inner h-100 rounded-top">
+                                <div class="carousel-item active h-100" data-bs-interval="5000">
+                                    <img src="img/fort1.webp" class="d-block w-100 h-100" alt="Fort Gorges 1" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/fort2.webp" class="d-block w-100 h-100" alt="Fort Gorges 2" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/fort3.webp" class="d-block w-100 h-100" alt="Fort Gorges 3" style="object-fit:cover;">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselFort" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselFort" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="sub-heading mb-2">Fort Gorges</h4>
+                        <p class=" flex-grow-1">
+                            This 19th-century granite fort is accessible only at low tide. Step back in time and explore weathered walls, hidden rooms, and breathtaking harbor views.
+                        </p>
+                        <a href="#" class="btn btn-info text-white fw-semibold mt-auto">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <!-- Diamond Cove -->
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column bg-primary text-white">
+                    <div class="w-100" style="aspect-ratio:1/1;">
+                        <div id="carouselBug" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselBug" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carouselBug" data-bs-slide-to="1"></button>
+                            </div>
+                            <div class="carousel-inner h-100 rounded-top">
+                                <div class="carousel-item active h-100" data-bs-interval="5000">
+                                    <img src="img/bug1.webp" class="d-block w-100 h-100" alt="Bug 1" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/bug2.webp" class="d-block w-100 h-100" alt="Bug 2" style="object-fit:cover;">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBug" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselBug" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="sub-heading mb-2">Bug Light</h4>
+                        <p class=" flex-grow-1">
+                            A peaceful retreat offering waterfront dining, cozy accommodations, and scenic walking paths. Sunset views from here are some of the best in the bay.
+                        </p>
+                        <a href="#" class="btn btn-info text-white fw-semibold mt-auto">More Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Peaks Island -->
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column bg-primary text-white">
+                    <div class="w-100" style="aspect-ratio:1/1;">
+                        <div id="carouselSWG" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselSWG" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carouselSWG" data-bs-slide-to="1"></button>
+                            </div>
+                            <div class="carousel-inner h-100 rounded-top">
+                                <div class="carousel-item active h-100" data-bs-interval="5000">
+                                    <img src="img/swg1.webp" class="d-block w-100 h-100" alt="Peaks Island 1" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/swg2.webp" class="d-block w-100 h-100" alt="Peaks Island 2" style="object-fit:cover;">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSWG" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselSWG" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="sub-heading mb-2">Saltwater Grill</h4>
+                        <p class=" flex-grow-1">
+                            Known for its beaches, vibrant village, and scenic bike rides. A quick trip from the mainland makes it a favorite for both day trips and evening escapes.
+                        </p>
+                        <a href="#" class="btn btn-info text-white fw-semibold mt-auto">More Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fort Gorges -->
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column bg-primary text-white">
+                    <div class="w-100" style="aspect-ratio:1/1;">
+                        <div id="carouselJewell" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselJewell" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carouselJewell" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carouselJewell" data-bs-slide-to="2"></button>
+                            </div>
+                            <div class="carousel-inner h-100 rounded-top">
+                                <div class="carousel-item active h-100" data-bs-interval="5000">
+                                    <img src="img/jewell1.webp" class="d-block w-100 h-100" alt="Jewell 1" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/jewell2.webp" class="d-block w-100 h-100" alt="Jewell 2" style="object-fit:cover;">
+                                </div>
+                                <div class="carousel-item h-100" data-bs-interval="5000">
+                                    <img src="img/jewell3.webp" class="d-block w-100 h-100" alt="Jewell 3" style="object-fit:cover;">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselJewell" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselJewell" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="sub-heading mb-2">Jewell</h4>
+                        <p class=" flex-grow-1">
+                            This 19th-century granite fort is accessible only at low tide. Step back in time and explore weathered walls, hidden rooms, and breathtaking harbor views.
+                        </p>
+                        <a href="#" class="btn btn-info text-white fw-semibold mt-auto">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div style="height: 250px; background-image: url('img/lighthouse.webp'); background-repeat: no-repeat;
+  background-attachment: fixed; background-size: cover;">
+</div>
+
+
+
+<div class="container-fluid px-4 bg-primary py-5">
+    <div class="row text-center">
+        <div class="col-12">
+            <h2 class="h1 fw-semibold mb-3 text-white">Island Offerings</h2>
+        </div>
+    </div>
+    <div class="row g-4">
+        <div class="col-lg-3 col-sm-6   d-flex align-items-stretch">
+            <div class="rounded">
+                <a href="https://www.crownjewelportland.com" target="_blank"><img alt="Live Music"
+                                                                                  class="card-img-top link-img rounded"
+                                                                                  src="img/CJ.webp"></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6   d-flex align-items-stretch">
+            <div class="">
+                <a href="https://joneslanding.net" target="_blank"><img alt="Lighthouse" class="card-img-top link-img rounded"
+                                                                        src="img/JL.webp"></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6   d-flex align-items-stretch">
+            <div class="card">
+                <a href="https://innonpeaks.com" target="_blank"><img alt="Sunset" class="card-img-top link-img rounded"
+                                                                      src="img/IOP.webp"></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6   d-flex align-items-stretch">
+            <div class="card">
+                <a href="https://www.innatdiamondcove.com" target="_blank"><img alt="Sunset"
+                                                                                class="card-img-top link-img rounded"
+                                                                                src="img/IDC.webp"></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6   d-flex align-items-stretch">
+            <div class="card">
+                <a href="https://islandlobsterco.com" target="_blank"><img alt="Sunset" class="card-img-top link-img rounded"
+                                                                           src="img/ILC.webp"></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6   d-flex align-items-stretch">
+            <div class="card">
+                <a href="https://www.diamondsedgerestaurantandmarina.com" target="_blank"><img alt="Sunset"
+                                                                                               class="card-img-top link-img rounded"
+                                                                                               src="img/DE.webp"></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6   d-flex align-items-stretch">
+            <div class="card">
+                <a href="https://www.chebeagueislandinn.com" target="_blank"><img alt="Sunset"
+                                                                                  class="card-img-top link-img rounded"
+                                                                                  src="img/CII.webp"></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6   d-flex align-items-stretch">
+            <div class="card">
+                <a href="https://www.lobakehouse.com" target="_blank"><img alt="Fireworks" class="card-img-top link-img rounded"
+                                                                           src="img/LIB.webp"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container-fluid padding">
+        <div class="row text-center align-items-center">
+            <div class="col-md-4">
+                <p><a href="tel: 207-415-8493">
+                    207-415-8493
+                </a>
+                    <br/>
+                    <br/>
+                    <a href="mailto: reservations@foggswatertaxi.com">
+                        reservations@foggswatertaxi.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <p class="social">
+                    <a href="https://www.facebook.com/FoggsWaterTaxi/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/foggswatertaxi/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.yelp.com/biz/foggs-water-taxi-and-charter-portland"><i class="fab fa-yelp"></i></a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    <a href="https://www.google.com/maps/place/Fogg's+Water+Taxi+and+Charters/@43.6561357,-70.2489642,18.47z/data=!4m5!3m4!1s0x4cb29c3f50677879:0x618f34828fe7fb07!8m2!3d43.65629!4d-70.2487871">
+                        Maine Wharf
+                        <br/>
+                        72 Commercial Street
+                        <br/>
+                        Portland, ME 04101
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="col-12 " style="text-align: center;">
+            <hr class="light"/>
+            <h5>&copy; 2023 foggswatertaxi.com</h5>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

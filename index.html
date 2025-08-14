@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home - Fogg's Water Taxi (Bootstrap)</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Optional fonts/icons to match your original page -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/cf2efbd62f.js" crossorigin="anonymous"></script>
+
+    <!-- FareHarbor (kept from original) -->
+    <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md bg-white border-bottom">
+    <div class="container-xl">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/fwt_logo.png" alt="Fogg's Logo" class="me-2" style="height:40px;" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-md-center">
+                <li class="nav-item me-md-3"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="taxi.html">Water Taxi</a></li>
+
+                <li class="nav-item dropdown me-md-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
+                    <ul class="dropdown-menu shadow-sm" aria-labelledby="chartersDropdown">
+                        <li><a class="dropdown-item" href="charters.html">Private Charters</a></li>
+                        <li><a class="dropdown-item" href="bwoc.html">Beer Wine Oysters</a></li>
+                        <li><a class="dropdown-item" href="sunset.html">Wednesday Night Sunsets</a></li>
+                        <li><a class="dropdown-item" href="flotilla.html">Flotilla to Fight Cancer</a></li>
+                        <li><a class="dropdown-item" href="fireworks.html">4th of July Fireworks</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="events.html">All Events</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item me-md-3"><a class="nav-link" href="tripIdeas.html">Trip Ideas</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="ourfleet.html">Our Fleet</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero bg-dark">
+    <video autoplay loop muted playsinline>
+        <source src="img/compressed.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content p-4">
+        <h1 class="display-2 fw-semibold mb-3 lobster-regular">Fogg's Water Taxi &amp; Charters</h1>
+        <h3 class="h3 mb-4">Casco Bay &middot; Portland Maine</h3>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <!-- Mobile: tel link -->
+            <a href="tel:+12074158493" class="btn btn-info text-white fw-semibold py-3 px-4 d-sm-none">Book Water Taxi</a>
+            <!-- Desktop: /taxi link -->
+            <a href="/taxi" class="btn btn-info text-white fw-semibold py-3 px-4 d-none d-sm-inline-block">Book Water Taxi</a>
+            <!-- Shared button: Cruises -->
+            <a href="https://fareharbor.com/embeds/book/foggswatertaxi/items/?flow=955616"
+               onclick="FareHarbor.show({slug: 'foggswatertaxi', flow: 955616, fullItems: true}); return false;"
+               class="btn btn-light fw-semibold py-3 px-4">Book Public Cruises</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA + SERVICES + FEATURED DESTINATION (cyan background with overlay image) -->
+<!-- FULL-WIDTH BLUE BACKGROUND (SVG) WRAPPER -->
+<section class="with-bg-image bg-secondary py-4 py-md-5">
+    <div class="container position-relative z-1">
+
+        <!-- CTA -->
+        <div class="row align-items-center bg-light rounded-4 p-4 p-md-5 mb-4">
+            <div class="col-md-6 fs-5">Ready to book?</div>
+            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                <a class="btn btn-outline-secondary" href="tel:207-415-8493">Call Now</a>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="bg-primary text-white rounded-4 p-4 p-md-5 overflow-visible mb-4">
+            <div class="row align-items-center gy-4 position-relative">
+                <div class="col-md-8 pe-10">
+                    <h2 class="h2 fw-semibold mb-3">Our Services</h2>
+                    <p class="mb-3">
+                        We offer transport for everyone! From getting to your dinner reservation in Diamond Cove
+                        to getting home after a late flight we will help get you where you're going.
+                    </p>
+                    <p class="mb-0">
+                        Explore our <a class="link-light fw-semibold" href="taxi.html">Water Taxi page</a>
+                        to plan your island adventure or check out our
+                        <a class="link-light fw-semibold" href="events.html">Events page</a>
+                        to reserve your spot on one of our public charters. Alternatively, experience the bay in
+                        style with one of our <a class="link-light fw-semibold" href="charters.html">private charters</a>,
+                        tailor-made for your special events and gatherings. Let Fogg's Water Taxi Services create
+                        unforgettable memories on the sparkling waters of Casco Bay. Book your trip today!
+                    </p>
+                </div>
+                <div class="col-md-4 stacked-wrap">
+                    <img src="img/MartineCard1.webp" alt="Casco Bay Extra" class="stacked-base rounded-3" />
+                    <img src="img/summerHours.webp" alt="Casco Bay" class="stacked-top rounded-3" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Destination -->
+        <div class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
+            <div class="row g-4 align-items-stretch">
+                <!-- Carousel (1/3 on md+) -->
+                <div class="col-md-4">
+                    <div id="featuredCarousel" class="carousel carousel-dark slide featured-carousel" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner rounded-3">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="img/DC1.webp" class="d-block w-100" alt="Diamond Cove 1" />
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/DC2.webp" class="d-block w-100" alt="Diamond Cove 2" />
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/DC3.webp" class="d-block w-100" alt="Diamond Cove 3" />
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Text (2/3 on md+) -->
+                <div class="col-md-8 d-flex flex-column justify-content-center">
+                    <span class="text-cyan-200 text-uppercase small mb-2">Featured Destination</span>
+                    <h3 class="display-6 fw-semibold">Diamond Cove</h3>
+                    <p class="mt-3">
+                        Diamond Cove is a great choice for date night or a memorable dinner on the bay. Boasting two outstanding
+                        restaurants and a welcoming hotel, it offers something for everyone. To cap off your visit, book your
+                        return at sunset for an unforgettable view.
+                    </p>
+                    <div class="mt-3 d-flex flex-wrap align-items-center gap-2">
+                        <a href="https://www.crownjewelportland.com" target="_blank" rel="noopener noreferrer" class="btn btn-light text-info fw-semibold">Visit Crown Jewel</a>
+                        <a href="https://www.diamondsedgerestaurantandmarina.com" target="_blank" rel="noopener noreferrer" class="btn btn-light text-info fw-semibold">Visit Diamonds Edge</a>
+                        <a href="tripIdeas.html" class="btn btn-outline-light">Other Trip Ideas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT (inside blue wrapper) -->
+        <div class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
+            <h2 class="h2 fw-semibold mb-3">About Fogg's Water Taxi</h2>
+            <p class="mb-0">
+                We offer seamless transportation to the picturesque islands of Casco Bay with our fleet of
+                handcrafted boats. As the turquoise waters embrace you, the warm hospitality of our local crew
+                leaves you feeling like part of the family. With a deep-rooted connection to the bay and a
+                dedication to preserving its natural beauty, we offer an authentic Maine experience.
+            </p>
+        </div>
+
+        <!-- WHY WE'RE BEST (inside blue wrapper) -->
+        <div class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
+            <h2 class="h2 fw-semibold mb-4 text-center">Why We're Portland, Maine's Best Water Taxi</h2>
+            <div class="row g-4">
+                <div class="col-md-6 d-flex">
+                    <span class="me-3 fs-3">⛵</span>
+                    <p class="mb-0"><strong>Expertise &amp; Experience:</strong> With decades in the business, our captains hold a wealth of maritime knowledge, ensuring safe and comfortable journeys.</p>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <span class="me-3 fs-3">💲</span>
+                    <p class="mb-0"><strong>Competitive Rates:</strong> We believe quality shouldn't compromise affordability. Our pricing structure is designed to offer the best value on the bay.</p>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <span class="me-3 fs-3">🗺️</span>
+                    <p class="mb-0"><strong>Wide Range of Services:</strong> Whether you're looking for a scenic island tour, a last minute taxi ride, or a bespoke private charter, we offer service tailored to your needs.</p>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <span class="me-3 fs-3">⭐</span>
+                    <p class="mb-0"><strong>Stellar Reputation:</strong> Our legacy in Portland speaks volumes. Fogg's is synonymous with reliability and excellence, a reputation built on impeccable service.</p>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <span class="me-3 fs-3">🤝</span>
+                    <p class="mb-0"><strong>Exceptional Customer Service:</strong> We prioritize our passengers. From the moment you book with us to when you step off our vessel, expect a seamless experience with a friendly crew ready to assist.</p>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <span class="me-3 fs-3">🚤</span>
+                    <p class="mb-0"><strong>State-of-the-Art Fleet:</strong> Safety is paramount. Our handcrafted boats are equipped with state-of-the-art safety and navigation systems, ensuring you reach your destination timely and securely.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TESTIMONIALS (inside blue wrapper) -->
+        <div class="bg-light rounded-4 p-4 p-md-5">
+            <h2 class="h2 fw-semibold mb-4 text-center">What Our Customers Say</h2>
+
+            <div class="row g-4 row-cols-1 row-cols-md-3">
+                <div class="col">
+                    <figure class="h-100 rounded-3 border bg-white p-4 shadow-sm m-0">
+                        <div class="quote-mark mb-3">“</div>
+                        <blockquote class="mb-3 text-secondary">
+                            My partner and I recently hosted a wedding out on Great Diamond Island, and Fogg’s Water Taxi
+                            was the lynchpin of the whole experience. ...
+                        </blockquote>
+                        <figcaption class="d-flex justify-content-between align-items-center small">
+                            <div>
+                                <div class="fw-semibold text-dark">Josheph B.</div>
+                                <div class="text-secondary">Boston, MA</div>
+                            </div>
+                            <div aria-label="5 star rating" class="text-warning">★★★★★</div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col">
+                    <figure class="h-100 rounded-3 border bg-white p-4 shadow-sm m-0">
+                        <div class="quote-mark mb-3">“</div>
+                        <blockquote class="mb-3 text-secondary">
+                            Our wedding was on Casco Bay &amp; my mom forgot the wedding dress. ...
+                        </blockquote>
+                        <figcaption class="d-flex justify-content-between align-items-center small">
+                            <div>
+                                <div class="fw-semibold text-dark">Kel L.</div>
+                                <div class="text-secondary">Portland, ME</div>
+                            </div>
+                            <div aria-label="5 star rating" class="text-warning">★★★★★</div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col">
+                    <figure class="h-100 rounded-3 border bg-white p-4 shadow-sm m-0">
+                        <div class="quote-mark mb-3">“</div>
+                        <blockquote class="mb-3 text-secondary">
+                            Best way to island hop! While on vacation on PI, we decided to take a day trip ...
+                        </blockquote>
+                        <figcaption class="d-flex justify-content-between align-items-center small">
+                            <div>
+                                <div class="fw-semibold text-dark">Robin T.</div>
+                                <div class="text-secondary">New York, NY</div>
+                            </div>
+                            <div aria-label="5 star rating" class="text-warning">★★★★★</div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light py-4 mt-4">
+    <div class="container">
+        <div class="row text-center text-md-start g-3">
+            <div class="col-md-4">
+                <p class="mb-1"><a class="link-light text-decoration-none" href="tel:207-415-8493">207-415-8493</a></p>
+                <p class="mb-0"><a class="link-light text-decoration-none" href="mailto:reservations@foggswatertaxi.com">reservations@foggswatertaxi.com</a></p>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center gap-3 fs-4">
+                    <a class="link-light" href="https://www.facebook.com/FoggsWaterTaxi/"><i class="fab fa-facebook"></i></a>
+                    <a class="link-light" href="https://www.instagram.com/foggswatertaxi/"><i class="fab fa-instagram"></i></a>
+                    <a class="link-light" href="https://www.yelp.com/biz/foggs-water-taxi-and-charter-portland"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p class="mb-0"><a class="link-light text-decoration-none" href="https://www.google.com/maps/place/Fogg's+Water+Taxi+and+Charters/@43.6561357,-70.2489642,18.47z">
+                    Maine Wharf<br>72 Commercial Street<br>Portland, ME 04101
+                </a></p>
+            </div>
+        </div>
+        <div class="pt-3 mt-3 border-top text-center small">&copy; 2023 foggswatertaxi.com</div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
