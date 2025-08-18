@@ -183,8 +183,7 @@
                     <hr id="hr" style="display:none;" />
                     <p id="fare" class="fs-5" style="display:none;"></p>
                     <hr id="hr1" style="display:none;" />
-                    <p class="mb-1" id="prepay" style="display:none;">– Taxis outside operating hours require prepayment when booking.</p>
-                    <p class="mb-3" id="rs" style="display:none;">– Ask about a ride-share when booking to save $10.</p>
+                    <p class="mb-1" id="prepay" style="display:none;">– Taxis outside operating hours require prepayment when booking, and are subject to a 20% auto gratuity</p>
                     <a href="tel:207-415-8493">
                         <button class="btn btn-outline-light" id="button" type="button" style="display:none;">Call Now</button>
                     </a>
@@ -193,67 +192,85 @@
         </div>
 
 
-        <!-- LARGE-GROUP PRICING (Accordion) -->
-        <div class="bg-light rounded-4 p-4 p-md-5 mb-4">
-            <div class="accordion" id="accordion">
-                <div class="accordion-item" style="border: none;">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Need transport for a larger group? Click here to see pricing for our 49 person vessels
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                         data-bs-parent="#accordion">
-                        <div class="accordion-body">
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>CAT One Way Rate</th>
-                                        <th>6:30 AM – 9:59 PM</th>
-                                        <th>10:00 PM – 11:59 PM</th>
-                                        <th>12:00 AM - 6:29 AM</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr><td>Saltwater Grill</td><td>$400</td><td>$500</td><td>$600</td></tr>
-                                    <tr><td>43 North</td><td>$400</td><td>$500</td><td>$600</td></tr>
-                                    <tr><td>Little Diamond</td><td>$400</td><td>$500</td><td>$600</td></tr>
-                                    <tr><td>House</td><td>$400</td><td>$500</td><td>$600</td></tr>
-                                    <tr><td>Cushing</td><td>$400</td><td>$500</td><td>$600</td></tr>
-                                    <tr><td>Peaks</td><td>$400</td><td>$500</td><td>$600</td></tr>
-                                    <tr><td>Great Diamond State Dock</td><td>$400</td><td>$500</td><td>$600</td></tr>
-                                    <tr><td>TEIA (Peaks)</td><td>$400</td><td>$500</td><td>$600</td></tr>
-                                    <tr><td>Diamond Cove</td><td>$450</td><td>$550</td><td>$650</td></tr>
-                                    <tr><td>Long</td><td>$500</td><td>$600</td><td>$700</td></tr>
-                                    <tr><td>Clapboard</td><td>$600</td><td>$700</td><td>$800</td></tr>
-                                    <tr><td>Chebeague Chandlers</td><td>$600</td><td>$700</td><td>$800</td></tr>
-                                    <tr><td>Cliff</td><td>$750</td><td>$850</td><td>$950</td></tr>
-                                    <tr><td>Chebeague Stone Pier</td><td>$850</td><td>$950</td><td>$1050</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div><!-- /accordion-body -->
+        <div class="accordion" id="groupVesselAccordion">
+            <div class="accordion-item ">
+                <h2 class="accordion-header bg-secondary" id="groupVesselHeading">
+                    <button class="accordion-button collapsed bg-secondary" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#groupVesselCollapse"
+                            aria-expanded="false"
+                            aria-controls="groupVesselCollapse">
+                        Need transport for a larger group? Click here to see pricing for our 49 person vessels
+                    </button>
+                </h2>
+                <div id="groupVesselCollapse" class="accordion-collapse collapse"
+                     aria-labelledby="groupVesselHeading"
+                     data-bs-parent="#groupVesselAccordion">
+                    <div class="accordion-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>CAT One Way Rate</th>
+                                    <th>6:30 AM – 9:59 PM</th>
+                                    <th>10:00 PM – 11:59 PM</th>
+                                    <th>12:00 AM – 6:29 AM</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr><td>Saltwater Grill</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                <tr><td>43 North</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                <tr><td>Little Diamond</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                <tr><td>House</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                <tr><td>Cushing</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                <tr><td>Peaks</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                <tr><td>Great Diamond State Dock</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                <tr><td>TEIA (Peaks)</td><td>$400</td><td>$500</td><td>$600</td></tr>
+                                <tr><td>Diamond Cove</td><td>$450</td><td>$550</td><td>$650</td></tr>
+                                <tr><td>Long</td><td>$500</td><td>$600</td><td>$700</td></tr>
+                                <tr><td>Clapboard</td><td>$600</td><td>$700</td><td>$800</td></tr>
+                                <tr><td>Chebeague Chandlers</td><td>$600</td><td>$700</td><td>$800</td></tr>
+                                <tr><td>Cliff</td><td>$750</td><td>$850</td><td>$950</td></tr>
+                                <tr><td>Chebeague Stone Pier</td><td>$850</td><td>$950</td><td>$1050</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+    </div>
+</section>
         <!-- DESTINATIONS HEADING -->
+<section class="py-md-3 bg-primary text-white">
+    <div class="container">
+        <div class="bg-primary text-white rounded-3 p-3 p-md-4">
+            <div class="row g-4 align-items-center">
+                <!-- Left Column: Text -->
+                <div class="col-md-6 pe-md-5">
+                    <div class="col-md-3 listings-section">
+                        <div class="listings light-color rounded" id="listings"></div>
+            x
+                </div>
 
+                <!-- Right Column: Image -->
+                <div class="col-md-6">
+                    <img src="img/best.jpeg" alt="Best Water Taxi" class="img-fluid rounded-3 shadow-sm w-100 h-100 object-fit-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- MAP + LISTINGS -->
-        <div class="bg-light rounded-4 p-4 p-md-5 mb-4">
+        <div class="bg-light mb-4">
             <div class=" text-cyan-700 fw-bold text-center mb-4">
                 <h2 class="mb-0">Destinations</h2>
             </div>
-            <div class="row g-3">
-                <div class="col-md-3 listings-section">
-                    <div class="listings light-color rounded" id="listings"></div>
-                </div>
+            <div class="row">
+
                 <div class="col-sm-12 col-md-9">
-                    <div class="map rounded w-100" id="map"></div>
+                    <div class="map w-100" id="map"></div>
                 </div>
             </div>
         </div>
@@ -395,11 +412,8 @@
                 <a href="tripIdeas.html" class="btn btn-outline-info btn-lg">More Trip Ideas</a>
             </div>
         </div>
-
-
-
     </div>
-</section>
+
 
 <footer class="footer">
     <div class="container-fluid padding">
