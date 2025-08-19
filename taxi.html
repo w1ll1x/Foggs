@@ -16,32 +16,7 @@
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
     <meta content="odanadtzl0u0bp2kjxtd1c1cawwy5c" name="facebook-domain-verification"/>
-    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PZGNQN1YC"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2PZGNQN1YC'); </script>
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1599431323888300');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" src="https://www.facebook.com/tr?id=1599431323888300&ev=PageView&noscript=1" width="1"/>
-    </noscript>
+
 </head>
 
 <body>
@@ -84,14 +59,7 @@
 </nav>
 
 <!-- (Optional) tiny helpers if not already on the page -->
-<style>
-    .with-bg-image { position: relative; isolation: isolate; }
-    .with-bg-image::before {
-        content:""; position:absolute; inset:0;
-        background:url('img/contour-lines.svg') center/cover no-repeat;
-        opacity:.5; pointer-events:none; z-index:0;
-    }
-</style>
+
 
 <!-- HERO (same feel as Charters page) -->
 <header class="hero-banner" style="background-image:url('img/taxi.jpeg');">
@@ -100,7 +68,7 @@
 
 <!-- THREE-COL SECTION (colors/background from your first page) -->
 <!-- FULL-WIDTH BLUE BACKGROUND (SVG) WRAPPER -->
-<section class="with-bg-image bg-secondary py-4 py-md-5">
+<section class="with-bg-image-light py-4 py-md-5">
     <div class="container position-relative z-1">
 
         <!-- TOP FEATURES / SERVICE, DESTINATIONS, FARES -->
@@ -195,7 +163,7 @@
         <div class="accordion" id="groupVesselAccordion">
             <div class="accordion-item ">
                 <h2 class="accordion-header bg-secondary" id="groupVesselHeading">
-                    <button class="accordion-button collapsed bg-secondary" type="button"
+                    <button class="accordion-button collapsed bg-secondary rounded" type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#groupVesselCollapse"
                             aria-expanded="false"
@@ -243,39 +211,32 @@
     </div>
 </section>
         <!-- DESTINATIONS HEADING -->
-<section class="py-md-3 bg-primary text-white">
-    <div class="container">
-        <div class="bg-primary text-white rounded-3 p-3 p-md-4">
-            <div class="row g-4 align-items-center">
-                <!-- Left Column: Text -->
-                <div class="col-md-6 pe-md-5">
-                    <div class="col-md-3 listings-section">
-                        <div class="listings light-color rounded" id="listings"></div>
-            x
-                </div>
+<section class="text-white">
+    <div class="container-fluid bg-primary py-3">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="h1 fw-semibold text-white">Destinations</h2>
+            </div>
+        </div>
 
-                <!-- Right Column: Image -->
-                <div class="col-md-6">
-                    <img src="img/best.jpeg" alt="Best Water Taxi" class="img-fluid rounded-3 shadow-sm w-100 h-100 object-fit-cover">
-                </div>
+        <div class="row g-4 align-items-stretch px-md-4 pb-4">
+            <!-- Listings: hidden on < md, scrollable, with padding -->
+            <div class="col-md-3 d-none d-md-flex">
+                <div id="listings" class="listings light-color w-100 overflow-auto p-3 bg-secondary rounded-3 min-vh-75"></div>
+            </div>
+
+            <!-- Map: always visible; full width on mobile, 3/4 on md+ -->
+            <div class="col-12 col-md-9 d-flex align-items-stretch">
+                <!-- Key: give the MAP a min viewport height and let it grow -->
+                <div id="map" class="map flex-grow-1 w-100 rounded-3 min-vh-75"></div>
             </div>
         </div>
     </div>
 </section>
 
-        <div class="bg-light mb-4">
-            <div class=" text-cyan-700 fw-bold text-center mb-4">
-                <h2 class="mb-0">Destinations</h2>
-            </div>
-            <div class="row">
 
-                <div class="col-sm-12 col-md-9">
-                    <div class="map w-100" id="map"></div>
-                </div>
-            </div>
-        </div>
 
-        <!-- FAVORITE ISLANDS -->
+<!-- FAVORITE ISLANDS -->
         <div class="bg-light rounded-4 p-4 p-md-5 mb-4">
             <div class="text-center mb-4">
                 <h2 class="mb-1">Our Favorite Islands</h2>

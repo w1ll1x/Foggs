@@ -55,82 +55,65 @@
 </head>
 
 <body>
-<nav class="navbar navbar-custom navbar-expand-lg sticky-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img alt="logo" class="link-img home-link" src="img/logo2.webp"></a>
-        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
-                data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
-            <span class="material-symbols-outlined">
-menu
-</span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto"> <!-- Modified class: ms-auto -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="taxi.html" >Taxi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="charters.html">Charters</a>
-                </li>
+<nav class="navbar navbar-expand-md bg-white border-bottom">
+    <div class="container-xl">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/fwt_logo.png" alt="Fogg's Logo" class="me-2" style="height:40px;" />
+        </a>
 
-                <li class="nav-item dropdown">
-                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="events.html"
-                       id="navbarDropdown" role="button">
-                        Events
-                    </a>
-                    <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
-                        <!-- Dropdown links go here -->
-                        <li><a class="dropdown-item" href="livemusic.html">Happy Hour Cruise</a></li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-md-center">
+                <li class="nav-item me-md-3"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="taxi.html">Water Taxi</a></li>
+
+                <li class="nav-item dropdown me-md-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
+                    <ul class="dropdown-menu shadow-sm" aria-labelledby="chartersDropdown">
+                        <li><a class="dropdown-item" href="charters.html">Private Charters</a></li>
                         <li><a class="dropdown-item" href="bwoc.html">Beer Wine Oysters</a></li>
                         <li><a class="dropdown-item" href="sunset.html">Wednesday Night Sunsets</a></li>
                         <li><a class="dropdown-item" href="flotilla.html">Flotilla to Fight Cancer</a></li>
                         <li><a class="dropdown-item" href="fireworks.html">4th of July Fireworks</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="events.html">All Events</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="tripIdeas.html" style="color: #e33d26;">Trip Ideas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ourfleet.html">Our Fleet</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="faq.html">FAQ</a>
-                </li>
+
+                <li class="nav-item me-md-3"><a class="nav-link" href="tripIdeas.html">Trip Ideas</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="ourfleet.html">Our Fleet</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container-fluid tripsImage">
+<header class="hero-banner" style="background-image:url('img/TripIdeas.jpeg');">
+    <h1 class="display-3 fw-bold hero-title">Trip Ideas</h1>
+</header>
 
+
+<div class="bg-primary text-white">
+    <div class="container p-3 p-md-5">
+        <h2 class="sub-heading">Not sure where to travel? We've got you covered!</h2>
+        <p class="paragraph mb-0">
+            We offer a wide array of island excursions tailored to your preferences. For those keen on exploring nearby
+            destinations, Peaks Island and Diamond Cove are just a stone's throw away from Portland, Maine. For the more
+            adventurous, consider an overnight stay on an island, with camping options available on the secluded beaches of
+            Little Chebeague or picturesque Jewell Island. If you're pressed for time or looking for a brief escape, our
+            short excursions are perfect; perhaps a visit to historic Fort Gorges or a quick trip across the harbor to check
+            out Bug Light. Our goal is to help you experience Portland Harbor and Casco Bay at your own pace, ensuring you
+            experience the best the region has to offer. Whether you're interested in a full-fledged Charter or just a quick
+            tour, we're here to facilitate your island adventure.
+        </p>
+    </div>
 </div>
 
-<div class="row bg-primary text-white p-3 p-md-5 align-items-center">
-    <h2 class="sub-heading">Not sure where to travel? We've got you covered!</h2>
-    <p class="paragraph">
-        We offer a wide array of island excursions tailored to your preferences. For those keen on exploring nearby
-        destinations, Peaks Island and Diamond Cove are just a stone's throw away from Portland, Maine. For the more
-        adventurous, consider an overnight stay on an island, with camping options available on the secluded beaches of
-        Little Chebeague or picturesque Jewell Island. If you're pressed for time or looking for a brief escape, our
-        short excursions are perfect; perhaps a visit to historic Fort Gorges or a quick trip across the harbor to check
-        out Bug Light. Our goal is to help you experience Portland Harbor and Casco Bay at your own pace, ensuring you
-        experience the best the region has to offer. Whether you're interested in a full-fledged Charter or just a quick
-        tour, we're here to facilitate your island adventure.
-    </p>
-</div>
 
 <section class="py-4 py-md-5 bg-secondary with-bg-image">
     <div class="container">
