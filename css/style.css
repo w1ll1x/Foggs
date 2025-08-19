@@ -26,13 +26,7 @@
   color: #e33d26;
 }
 
-.footer {
-  background-color: #373535;
-  padding-top: 2rem;
-  font-size: 20px;
-  color: #e0e5da;
-  text-align: center;
-}
+
 
 .card-text {
   font-size: 18px;
@@ -90,7 +84,8 @@ border-radius: 5px;
   --bs-primary-rgb: 14, 116, 144;
   --bs-secondary: #74cef0;
   --bs-secondary-rgb: 116, 206, 240;
-  --bs-success: #00bba8;
+  --bs-success: #009966;
+  --bs-success-rgb: 0, 153, 102;
   --bs-info: #03a9f4;
   --bs-warning: #ffc107;
   --bs-danger: #f44336;

@@ -12,53 +12,43 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="img/logo2.webp" alt="Fogg's Water Taxi" style="height:40px" />
+<nav class="navbar navbar-expand-md bg-white border-bottom">
+    <div class="container-xl">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/fwt_logo.png" alt="Fogg's Logo" class="me-2" style="height:40px;" />
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div id="mainNav" class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="taxi.html">Taxi</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="charters.html">Charters</a></li>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-md-center">
+                <li class="nav-item me-md-3"><a class="nav-link"  href="index.html">Home</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link"  href="taxi.html">Water Taxi</a></li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-danger" href="events.html" id="eventsDropdown"
-                       role="button" data-bs-toggle="dropdown" aria-expanded="false">Events</a>
-                    <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
-                        <li><a class="dropdown-item" href="livemusic.html">Happy Hour Cruise</a></li>
-                        <li><a class="dropdown-item" href="bwoc.html">Beer Wine Oysters</a></li>
-                        <li><a class="dropdown-item" href="sunset.html">Wednesday Night Sunsets</a></li>
-                        <li><a class="dropdown-item" href="flotilla.html">Flotilla to Fight Cancer</a></li>
-                        <li><a class="dropdown-item" href="fireworks.html">4th of July Fireworks</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item text-danger" href="events.html">All Events</a></li>
+                <li class="nav-item dropdown me-md-3">
+                    <a class="nav-link dropdown-toggle active" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
+                    <ul class="dropdown-menu shadow-sm" aria-labelledby="chartersDropdown">
+                        <li><a class="dropdown-item " href="charters.html" >Private Charters</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="events.html" aria-current="page">All Events</a></li>
                     </ul>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="tripIdeas.html">Trip Ideas</a></li>
-                <li class="nav-item"><a class="nav-link" href="ourfleet.html">Our Fleet</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="tripIdeas.html">Trip Ideas</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="ourfleet.html">Our Fleet</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="aboutus.html">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- PAGE HEADER -->
-<section class="bg-light py-5">
-    <div class="container text-center">
-        <h1 class="display-5 mb-0 text-dark">Events</h1>
-    </div>
-</section>
+<header class="hero-banner" style="background-image:url('img/events.webp');">
+    <h1 class="display-3 fw-bold hero-title">Events</h1>
+</header>
 
 <!-- PUBLIC CHARTERS INTRO -->
 <section class="pb-5 bg-secondary with-bg-image py-4">
@@ -155,36 +145,50 @@
         </div>
     </div>
 </section>
-
-<!-- FOOTER -->
-<footer class="bg-dark text-light py-4">
-    <div class="container">
-        <div class="row text-center text-md-start g-3">
+<footer class="bg-success text-white">
+    <div class="container py-4">
+        <div class="row g-4 align-items-center text-center text-md-start">
+            <!-- Contact -->
             <div class="col-md-4">
                 <p class="mb-1">
-                    <a class="link-light text-decoration-none" href="tel:207-415-8493">207-415-8493</a>
+                    <a href="tel:207-415-8493" class="link-light text-decoration-none fw-semibold">207-415-8493</a>
                 </p>
                 <p class="mb-0">
-                    <a class="link-light text-decoration-none" href="mailto:reservations@foggswatertaxi.com">reservations@foggswatertaxi.com</a>
-                </p>
-            </div>
-            <div class="col-md-4">
-                <div class="d-flex justify-content-center gap-3 fs-4">
-                    <a class="link-light" href="https://www.facebook.com/FoggsWaterTaxi/"><i class="fab fa-facebook"></i></a>
-                    <a class="link-light" href="https://www.instagram.com/foggswatertaxi/"><i class="fab fa-instagram"></i></a>
-                    <a class="link-light" href="https://www.yelp.com/biz/foggs-water-taxi-and-charter-portland"><i class="fab fa-yelp"></i></a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <p class="mb-0">
-                    <a class="link-light text-decoration-none"
-                       href="https://www.google.com/maps/place/Fogg's+Water+Taxi+and+Charters/@43.6561357,-70.2489642,18.47z">
-                        Maine Wharf<br />72 Commercial Street<br />Portland, ME 04101
+                    <a href="mailto:reservations@foggswatertaxi.com" class="link-light text-decoration-none">
+                        reservations@foggswatertaxi.com
                     </a>
                 </p>
             </div>
+
+            <!-- Social -->
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center gap-3 fs-4">
+                    <a class="link-light" href="https://www.facebook.com/FoggsWaterTaxi/" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a class="link-light" href="https://www.instagram.com/foggswatertaxi/" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="link-light" href="https://www.yelp.com/biz/foggs-water-taxi-and-charter-portland" aria-label="Yelp">
+                        <i class="fab fa-yelp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="col-md-4">
+                <address class="mb-0">
+                    <a class="link-light text-decoration-none"
+                       href="https://www.google.com/maps/place/Fogg's+Water+Taxi+and+Charters/@43.6561357,-70.2489642,18.47z">
+                        Maine Wharf<br>72 Commercial Street<br>Portland, ME 04101
+                    </a>
+                </address>
+            </div>
         </div>
-        <div class="pt-3 mt-3 border-top text-center small">&copy; 2023 foggswatertaxi.com</div>
+
+        <hr class="border border-light opacity-50 my-3" />
+
+        <div class="text-center small">&copy; 2025 foggswatertaxi.com</div>
     </div>
 </footer>
 

@@ -31,17 +31,13 @@
 
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto align-items-md-center">
-                <li class="nav-item me-md-3"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-                <li class="nav-item me-md-3"><a class="nav-link" href="taxi.html">Water Taxi</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link"  href="index.html">Home</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link"  href="taxi.html">Water Taxi</a></li>
 
                 <li class="nav-item dropdown me-md-3">
-                    <a class="nav-link dropdown-toggle" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
+                    <a class="nav-link dropdown-toggle active" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
                     <ul class="dropdown-menu shadow-sm" aria-labelledby="chartersDropdown">
-                        <li><a class="dropdown-item" href="charters.html">Private Charters</a></li>
-                        <li><a class="dropdown-item" href="bwoc.html">Beer Wine Oysters</a></li>
-                        <li><a class="dropdown-item" href="sunset.html">Wednesday Night Sunsets</a></li>
-                        <li><a class="dropdown-item" href="flotilla.html">Flotilla to Fight Cancer</a></li>
-                        <li><a class="dropdown-item" href="fireworks.html">4th of July Fireworks</a></li>
+                        <li><a class="dropdown-item " href="charters.html" aria-current="page">Private Charters</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="events.html">All Events</a></li>
                     </ul>
@@ -72,7 +68,7 @@
             <h2 class="h2 fw-semibold mb-3 text-cyan-700">Custom Charters</h2>
             <p class="fs-5 mb-0">
                 Located in the heart of downtown Portland, Maine, we offer a wide array of charter experiences tailored to
-                your needs. Whether you’re planning an intimate sunset cruise, a lobster bake on a secluded island, or a
+                your needs. Whether you're planning an intimate sunset cruise, a lobster bake on a secluded island, or a
                 corporate outing for your team, our fleet and crew stand ready to craft the perfect adventure on Casco Bay.
             </p>
         </section>
@@ -186,32 +182,50 @@
             </div>
         </section>
 
-
-
-
-
-<!-- FOOTER -->
-<footer class="bg-dark text-light py-4 mt-4">
-    <div class="container">
-        <div class="row text-center text-md-start g-3">
+<footer class="bg-success text-white">
+    <div class="container py-4">
+        <div class="row g-4 align-items-center text-center text-md-start">
+            <!-- Contact -->
             <div class="col-md-4">
-                <a class="d-block link-light text-decoration-none" href="tel:207-415-8493">207‑415‑8493</a>
-                <a class="d-block link-light text-decoration-none mt-2" href="mailto:reservations@foggswatertaxi.com">reservations@foggswatertaxi.com</a>
+                <p class="mb-1">
+                    <a href="tel:207-415-8493" class="link-light text-decoration-none fw-semibold">207-415-8493</a>
+                </p>
+                <p class="mb-0">
+                    <a href="mailto:reservations@foggswatertaxi.com" class="link-light text-decoration-none">
+                        reservations@foggswatertaxi.com
+                    </a>
+                </p>
             </div>
+
+            <!-- Social -->
             <div class="col-md-4">
                 <div class="d-flex justify-content-center gap-3 fs-4">
-                    <a class="link-light" href="https://www.facebook.com/FoggsWaterTaxi/"><i class="fab fa-facebook"></i></a>
-                    <a class="link-light" href="https://www.instagram.com/foggswatertaxi/"><i class="fab fa-instagram"></i></a>
-                    <a class="link-light" href="https://www.yelp.com/biz/foggs-water-taxi-and-charter-portland"><i class="fab fa-yelp"></i></a>
+                    <a class="link-light" href="https://www.facebook.com/FoggsWaterTaxi/" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a class="link-light" href="https://www.instagram.com/foggswatertaxi/" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="link-light" href="https://www.yelp.com/biz/foggs-water-taxi-and-charter-portland" aria-label="Yelp">
+                        <i class="fab fa-yelp"></i>
+                    </a>
                 </div>
             </div>
+
+            <!-- Address -->
             <div class="col-md-4">
-                <a class="d-block link-light text-decoration-none" href="https://www.google.com/maps/place/Fogg's+Water+Taxi+and+Charters/@43.6561357,-70.2489642,18.47z">
-                    Maine Wharf<br />72 Commercial Street<br />Portland, ME 04101
-                </a>
+                <address class="mb-0">
+                    <a class="link-light text-decoration-none"
+                       href="https://www.google.com/maps/place/Fogg's+Water+Taxi+and+Charters/@43.6561357,-70.2489642,18.47z">
+                        Maine Wharf<br>72 Commercial Street<br>Portland, ME 04101
+                    </a>
+                </address>
             </div>
         </div>
-        <p class="pt-3 mt-3 border-top text-center small mb-0">&copy; 2025 foggswatertaxi.com</p>
+
+        <hr class="border border-light opacity-50 my-3" />
+
+        <div class="text-center small">&copy; 2025 foggswatertaxi.com</div>
     </div>
 </footer>
 
