@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet">
+
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/cf2efbd62f.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -147,7 +148,7 @@
                     <hr id="hr" style="display:none;" />
                     <p id="fare" class="fs-5" style="display:none;"></p>
                     <hr id="hr1" style="display:none;" />
-                    <p class="mb-1" id="prepay" style="display:none;">– Taxis outside operating hours require prepayment when booking, and are subject to a 20% auto gratuity</p>
+                    <p class="mb-5" id="prepay" style="display:none;"> * Taxis outside operating hours require prepayment when booking, and are subject to a 20% auto gratuity</p>
                     <a href="tel:207-415-8493">
                         <button class="btn btn-outline-light" id="button" type="button" style="display:none;">Call Now</button>
                     </a>
@@ -447,7 +448,7 @@
             { name: "Great Diamond",              fare: 65,  fee: 0 },
             { name: "House",                      fare: 60,  fee: 0 },
             { name: "Jewell",                     fare: 175, fee: 0 },
-            { name: "Little Chebeague",           fare: 95,  fee: 0 },
+            { name: "Little Chebeague",           fare: 140,  fee: 0 },
             { name: "Little Diamond",             fare: 60,  fee: 0 },
             { name: "Long",                       fare: 75,  fee: 0 },
             { name: "Peaks",                      fare: 65,  fee: 0 },
@@ -460,9 +461,10 @@
             { name: "Bug Light",              fare: 40,  fee: 10 },
             { name: "Cousins Island",         fare: 120, fee: 0  },
             { name: "Centerboard",            fare: 40,  fee: 10 },
+            { name: "DiMillos",               fare: 0,   fee: 5  },
             { name: "Dolphin Marina",         fare: 200, fee: 0  },
             { name: "East End Beach",         fare: 60,  fee: 20 },
-            { name: "Falmouth",               fare: 120, fee: 40 },
+            { name: "Falmouth",               fare: 120, fee: 100 },
             { name: "Fore Points",            fare: 30,  fee: 10 },
             { name: "Maine Yacht Center",     fare: 60,  fee: 30 },
             { name: "Saltwater Grille",       fare: 40,  fee: 10 },
@@ -546,7 +548,7 @@
         fareOutWrap.style.display = "block";
         hr.style.display = "block";
         fareText.style.display = "block";
-        fareText.textContent = `$${total}.00      Flat rate for up to six people.`;
+        fareText.textContent = `$${total}.00      One-way flat rate for up to six people.`;
         hr1.style.display = "block";
         button.style.display = "block";
 
@@ -1085,7 +1087,7 @@
         })
             .setLngLat(currentFeature.geometry.coordinates)
             .setHTML(
-                '<h4>' +
+                '<h4 class="text-black">' +
                 currentFeature.properties.location +
                 '</h4>'
             )
