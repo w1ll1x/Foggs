@@ -385,15 +385,8 @@ figure {
   text-decoration: none;
 }
 
-a {
-  color: #ffffff;
-  text-decoration: none;
-}
 
-a:hover {
-  color: #e33d26;
-  text-decoration: none;
-}
+
 
 .paragraph a{
   font-weight: bold;
