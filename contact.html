@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home - Fogg's Water Taxi (Bootstrap)</title>
+    <title>Contact - Fogg's Water Taxi (Bootstrap)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/cf2efbd62f.js" crossorigin="anonymous"></script>
@@ -23,20 +23,20 @@
 
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto align-items-md-center">
-                <li class="nav-item me-md-3"><a class="nav-link"  href="/">Home</a></li>
-                <li class="nav-item me-md-3"><a class="nav-link"  href="taxi">Water Taxi</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="taxi">Water Taxi</a></li>
 
                 <li class="nav-item dropdown me-md-3">
-                    <a class="nav-link dropdown-toggle " href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
                     <ul class="dropdown-menu shadow-sm" aria-labelledby="chartersDropdown">
-                        <li><a class="dropdown-item " href="charters" >Private Charters</a></li>
+                        <li><a class="dropdown-item" href="charters">Private Charters</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="cruises" >Public Cruises</a></li>
+                        <li><a class="dropdown-item" href="cruises">Public Cruises</a></li>
                     </ul>
                 </li>
 
-                <li class="nav-item me-md-3"><a class="nav-link " href="tripIdeas" >Trip Ideas</a></li>
-                <li class="nav-item me-md-3"><a class="nav-link " href="ourfleet" >Our Fleet</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="tripIdeas">Trip Ideas</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="ourfleet">Our Fleet</a></li>
                 <li class="nav-item me-md-3"><a class="nav-link active" href="contact" aria-current="page">Contact</a></li>
                 <li class="nav-item me-md-3"><a class="nav-link" href="aboutus">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="faq">FAQ</a></li>
@@ -49,26 +49,81 @@
     <h1 class="display-3 fw-bold hero-title">Contact Us</h1>
 </header>
 
-<div class="container-fluid with-bg-image-light">
-    <div class="row light-color mx-md-3 mx-0  p-3 align-items-center rounded">
-        <div class="col-lg-8">
+<!-- Contact Form Section -->
+<div class="container-fluid with-bg-image-light py-4">
+    <div class="row light-color mx-md-3 mx-0 p-3 rounded g-4">
+
+        <!-- Hours / Info -->
+        <div class="col-12">
             <h2 class="sub-heading">Hours</h2>
             <p class="paragraph">
-               Our summer hours are daily from 7AM - 10PM, we do offer taxis outside of operating hours for an aditional cost.
-                <br/>
-                <br/>
+                Our summer hours are daily from 7AM - 10PM, we do offer taxis outside of operating hours for an additional cost.
+                <br/><br/>
                 For more information about taxis, or charters, feel free to email us at
                 <a href="mailto:reservations@foggswatertaxi.com">
                     reservations@foggswatertaxi.com
                 </a>
             </p>
-        </div>
-        <div class="col-lg-4">
-            <img alt="Summer" class="img-fluid rounded-4 " src="img/summerHours.webp">
-        </div>
-    </div>
 
+            <div class="mt-4">
+                <img alt="Summer" class="img-fluid rounded-4" src="img/summerHours.webp">
+            </div>
+        </div>
+
+        <!-- Contact Form (below) -->
+        <div class="col-12">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-6">
+                    <div class="bg-white rounded-4 p-4 shadow-sm border">
+                        <h2 class="h4 fw-semibold mb-3">Send us a message</h2>
+
+                        <form id="contactForm" novalidate>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" autocomplete="name" required>
+                                <div class="invalid-feedback">Please enter your name.</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" autocomplete="email" required>
+                                <div class="invalid-feedback">Please enter a valid email.</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <div class="invalid-feedback">Please enter a message.</div>
+                            </div>
+
+                            <!-- Honeypot -->
+                            <div style="position:absolute; left:-10000px;">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <button id="submitBtn" type="submit" class="btn btn-primary w-100">
+                                Send Message
+                            </button>
+
+                            <div id="formAlert" class="mt-3" role="status" aria-live="polite"></div>
+                        </form>
+
+                        <p class="small text-muted mt-3 mb-0">
+                            If you prefer, email us directly at
+                            <a href="mailto:reservations@foggswatertaxi.com">
+                                reservations@foggswatertaxi.com
+                            </a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
+
+
 <div class="container-fluid bg-primary p-4">
     <div class="row g-4 align-items-center text-white">
         <!-- Map image -->
@@ -86,6 +141,7 @@
         </div>
     </div>
 </div>
+
 <footer class="bg-success text-white">
     <div class="container py-4">
         <div class="row g-4 align-items-center text-center text-md-start">
@@ -133,6 +189,104 @@
     </div>
 </footer>
 
-</body>
+<!-- Bootstrap JS (needed for navbar dropdown/toggle) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Inline JS for contact form -->
+<script>
+    (function () {
+        const ENDPOINT = "https://onelog.foggswatertaxi.com/api/contact/";
+
+        const form = document.getElementById("contactForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const alertEl = document.getElementById("formAlert");
+
+        function showAlert(type, message) {
+            // type: "success" | "danger" | "warning" | "info"
+            alertEl.innerHTML = `
+            <div class="alert alert-${type} mb-0" role="alert">
+                ${message}
+            </div>
+        `;
+        }
+
+        function clearAlert() {
+            alertEl.innerHTML = "";
+        }
+
+        function setLoading(isLoading) {
+            submitBtn.disabled = isLoading;
+            submitBtn.innerHTML = isLoading
+                ? '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>Sending…'
+                : "Send Message";
+        }
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            clearAlert();
+
+            // Bootstrap-ish client-side validation
+            if (!form.checkValidity()) {
+                form.classList.add("was-validated");
+                showAlert("warning", "Please fix the highlighted fields and try again.");
+                return;
+            }
+
+            // Honeypot spam check
+            const honeypot = (document.getElementById("company")?.value || "").trim();
+            if (honeypot) {
+                // Pretend success to bots
+                showAlert("success", "Thanks! Your message has been sent.");
+                form.reset();
+                form.classList.remove("was-validated");
+                return;
+            }
+
+            const payload = {
+                name: document.getElementById("name").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                message: document.getElementById("message").value.trim(),
+            };
+
+            setLoading(true);
+
+            try {
+                const res = await fetch(ENDPOINT, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(payload),
+                });
+
+                // Try to parse JSON if possible
+                let data = null;
+                try { data = await res.json(); } catch (_) {}
+
+                if (!res.ok) {
+                    const errMsg = (data && (data.error || data.detail)) ? (data.error || data.detail) : "Unable to send message.";
+                    throw new Error(errMsg);
+                }
+
+                if (data && data.success) {
+                    showAlert("success", "Thanks! Your message has been sent.");
+                    form.reset();
+                    form.classList.remove("was-validated");
+                } else {
+                    // If your backend returns something else, still treat as ok:
+                    showAlert("success", "Thanks! Your message has been sent.");
+                    form.reset();
+                    form.classList.remove("was-validated");
+                }
+            } catch (err) {
+                console.error(err);
+                showAlert("danger", "Sorry — we couldn't send your message right now. Please email reservations@foggswatertaxi.com.");
+            } finally {
+                setLoading(false);
+            }
+        });
+    })();
+</script>
+
+</body>
 </html>
