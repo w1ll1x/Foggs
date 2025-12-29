@@ -78,22 +78,68 @@
                         <h2 class="h4 fw-semibold mb-3">Send us a message</h2>
 
                         <form id="contactForm" novalidate>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" autocomplete="name" required>
-                                <div class="invalid-feedback">Please enter your name.</div>
+                            <!-- Row: First / Last name -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="first_name" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="first_name" autocomplete="given-name" required>
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="last_name" class="form-label">Last name</label>
+                                    <input type="text" class="form-control" id="last_name" autocomplete="family-name" required>
+                                    <div class="invalid-feedback">Please enter your last name.</div>
+                                </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" autocomplete="email" required>
-                                <div class="invalid-feedback">Please enter a valid email.</div>
+                            <!-- Row: Email / Phone -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" autocomplete="email" required>
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone number</label>
+                                    <input type="tel" class="form-control" id="phone" autocomplete="tel" required>
+                                    <div class="invalid-feedback">Please enter your phone number.</div>
+                                </div>
                             </div>
 
+                            <!-- Row: Date / Group size -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="event_date" class="form-label">Date of trip (optional)</label>
+                                    <input type="date" class="form-control" id="event_date">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="group_size" class="form-label">Group size</label>
+                                    <select id="group_size" class="form-select" required>
+                                        <option value="" selected disabled>Select group size</option>
+                                        <option value="unsure">Unsure</option>
+                                        <!-- 1–50 will be injected by JS -->
+                                    </select>
+                                    <div class="invalid-feedback">Please select a group size or Unsure.</div>
+                                </div>
+                            </div>
+
+                            <!-- Trip type -->
                             <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
+                                <label for="trip_type" class="form-label">Type of trip</label>
+                                <select id="trip_type" class="form-select" required>
+                                    <option value="" selected disabled>Choose an option</option>
+                                    <option value="charter">Private Charter</option>
+                                    <option value="transport">Water Taxi / Transport</option>
+                                    <option value="unsure">Unsure</option>
+                                </select>
+                                <div class="invalid-feedback">Please select what type of trip you're interested in.</div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Tell us about what you're looking for</label>
                                 <textarea class="form-control" id="message" rows="5" required></textarea>
-                                <div class="invalid-feedback">Please enter a message.</div>
+                                <div class="invalid-feedback">Please tell us a bit about your trip.</div>
                             </div>
 
                             <!-- Honeypot -->
@@ -122,7 +168,6 @@
 
     </div>
 </div>
-
 
 <div class="container-fluid bg-primary p-4">
     <div class="row g-4 align-items-center text-white">
@@ -196,19 +241,27 @@
 <script>
     (function () {
         const ENDPOINT = "https://onelog.foggswatertaxi.com/api/contact/";
-        //const ENDPOINT = "http://127.0.0.1:8000/api/contact/";
+        // const ENDPOINT = "http://127.0.0.1:8000/api/contact/";
 
         const form = document.getElementById("contactForm");
         const submitBtn = document.getElementById("submitBtn");
         const alertEl = document.getElementById("formAlert");
+        const groupSizeSelect = document.getElementById("group_size");
+
+        // Populate group size 1–50 dynamically
+        for (let i = 1; i <= 50; i++) {
+            const opt = document.createElement("option");
+            opt.value = String(i);
+            opt.textContent = String(i);
+            groupSizeSelect.appendChild(opt);
+        }
 
         function showAlert(type, message) {
-            // type: "success" | "danger" | "warning" | "info"
             alertEl.innerHTML = `
-            <div class="alert alert-${type} mb-0" role="alert">
-                ${message}
-            </div>
-        `;
+                <div class="alert alert-${type} mb-0" role="alert">
+                    ${message}
+                </div>
+            `;
         }
 
         function clearAlert() {
@@ -226,7 +279,7 @@
             e.preventDefault();
             clearAlert();
 
-            // Bootstrap-ish client-side validation
+            // Client-side validation (HTML5)
             if (!form.checkValidity()) {
                 form.classList.add("was-validated");
                 showAlert("warning", "Please fix the highlighted fields and try again.");
@@ -244,8 +297,13 @@
             }
 
             const payload = {
-                name: document.getElementById("name").value.trim(),
+                first_name: document.getElementById("first_name").value.trim(),
+                last_name: document.getElementById("last_name").value.trim(),
                 email: document.getElementById("email").value.trim(),
+                phone: document.getElementById("phone").value.trim(),
+                event_date: document.getElementById("event_date").value, // may be ""
+                group_size: document.getElementById("group_size").value,
+                trip_type: document.getElementById("trip_type").value,
                 message: document.getElementById("message").value.trim(),
             };
 
@@ -260,7 +318,6 @@
                     body: JSON.stringify(payload),
                 });
 
-                // Try to parse JSON if possible
                 let data = null;
                 try { data = await res.json(); } catch (_) {}
 
@@ -274,7 +331,6 @@
                     form.reset();
                     form.classList.remove("was-validated");
                 } else {
-                    // If your backend returns something else, still treat as ok:
                     showAlert("success", "Thanks! Your message has been sent.");
                     form.reset();
                     form.classList.remove("was-validated");
