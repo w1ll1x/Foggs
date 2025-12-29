@@ -117,7 +117,11 @@
                                     <select id="group_size" class="form-select" required>
                                         <option value="" selected disabled>Select group size</option>
                                         <option value="unsure">Unsure</option>
-                                        <!-- 1–50 will be injected by JS -->
+                                        <option value="1-6">1–6</option>
+                                        <option value="7-25">7–25</option>
+                                        <option value="25-50">25–50</option>
+                                        <option value="50-100">50–100</option>
+                                        <option value="100+">100+</option>
                                     </select>
                                     <div class="invalid-feedback">Please select a group size or Unsure.</div>
                                 </div>
@@ -148,7 +152,7 @@
                                 <input type="text" id="company" tabindex="-1" autocomplete="off">
                             </div>
 
-                            <button id="submitBtn" type="submit" class="btn btn-primary w-100">
+                            <button id="submitBtn" type="submit" class="btn btn-primary w-100" disabled>
                                 Send Message
                             </button>
 
@@ -246,15 +250,6 @@
         const form = document.getElementById("contactForm");
         const submitBtn = document.getElementById("submitBtn");
         const alertEl = document.getElementById("formAlert");
-        const groupSizeSelect = document.getElementById("group_size");
-
-        // Populate group size 1–50 dynamically
-        for (let i = 1; i <= 50; i++) {
-            const opt = document.createElement("option");
-            opt.value = String(i);
-            opt.textContent = String(i);
-            groupSizeSelect.appendChild(opt);
-        }
 
         function showAlert(type, message) {
             alertEl.innerHTML = `
@@ -269,19 +264,36 @@
         }
 
         function setLoading(isLoading) {
-            submitBtn.disabled = isLoading;
+            submitBtn.disabled = isLoading || !form.checkValidity();
             submitBtn.innerHTML = isLoading
                 ? '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>Sending…'
                 : "Send Message";
         }
 
+        // Dynamically enable/disable submit based on form validity
+        function updateSubmitState() {
+            // Add was-validated once user starts interacting so invalids show up
+            form.classList.add("was-validated");
+
+            if (form.checkValidity()) {
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.disabled = true;
+            }
+        }
+
+        // Listen to changes on all inputs/selects/textarea to “proof” form dynamically
+        form.addEventListener("input", updateSubmitState);
+        form.addEventListener("change", updateSubmitState);
+
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
             clearAlert();
 
-            // Client-side validation (HTML5)
+            // Final check before sending
             if (!form.checkValidity()) {
                 form.classList.add("was-validated");
+                updateSubmitState();
                 showAlert("warning", "Please fix the highlighted fields and try again.");
                 return;
             }
@@ -293,6 +305,7 @@
                 showAlert("success", "Thanks! Your message has been sent.");
                 form.reset();
                 form.classList.remove("was-validated");
+                submitBtn.disabled = true;
                 return;
             }
 
@@ -330,10 +343,12 @@
                     showAlert("success", "Thanks! Your message has been sent.");
                     form.reset();
                     form.classList.remove("was-validated");
+                    submitBtn.disabled = true; // lock again until form is valid
                 } else {
                     showAlert("success", "Thanks! Your message has been sent.");
                     form.reset();
                     form.classList.remove("was-validated");
+                    submitBtn.disabled = true;
                 }
             } catch (err) {
                 console.error(err);
@@ -342,6 +357,9 @@
                 setLoading(false);
             }
         });
+
+        // Initial state
+        submitBtn.disabled = true;
     })();
 </script>
 
