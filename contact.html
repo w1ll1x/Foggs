@@ -75,18 +75,25 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-6">
                     <div class="bg-white rounded-4 p-4 shadow-sm border">
-                        <h2 class="h4 fw-semibold mb-3">Send us a message</h2>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h2 class="h4 fw-semibold mb-0">Send us a message</h2>
+                            <span class="small text-muted"><span class="text-danger">*</span> Required fields</span>
+                        </div>
 
                         <form id="contactForm" novalidate>
                             <!-- Row: First / Last name -->
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="first_name" class="form-label">First name</label>
+                                    <label for="first_name" class="form-label">
+                                        First name <span class="text-danger">*</span>
+                                    </label>
                                     <input type="text" class="form-control" id="first_name" autocomplete="given-name" required>
                                     <div class="invalid-feedback">Please enter your first name.</div>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="last_name" class="form-label">Last name</label>
+                                    <label for="last_name" class="form-label">
+                                        Last name <span class="text-danger">*</span>
+                                    </label>
                                     <input type="text" class="form-control" id="last_name" autocomplete="family-name" required>
                                     <div class="invalid-feedback">Please enter your last name.</div>
                                 </div>
@@ -95,12 +102,16 @@
                             <!-- Row: Email / Phone -->
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">Email</label>
+                                    <label for="email" class="form-label">
+                                        Email <span class="text-danger">*</span>
+                                    </label>
                                     <input type="email" class="form-control" id="email" autocomplete="email" required>
                                     <div class="invalid-feedback">Please enter a valid email.</div>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="phone" class="form-label">Phone number</label>
+                                    <label for="phone" class="form-label">
+                                        Phone number <span class="text-danger">*</span>
+                                    </label>
                                     <input type="tel" class="form-control" id="phone" autocomplete="tel" required>
                                     <div class="invalid-feedback">Please enter your phone number.</div>
                                 </div>
@@ -113,7 +124,9 @@
                                     <input type="date" class="form-control" id="event_date">
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="group_size" class="form-label">Group size</label>
+                                    <label for="group_size" class="form-label">
+                                        Group size <span class="text-danger">*</span>
+                                    </label>
                                     <select id="group_size" class="form-select" required>
                                         <option value="" selected disabled>Select group size</option>
                                         <option value="unsure">Unsure</option>
@@ -129,7 +142,9 @@
 
                             <!-- Trip type -->
                             <div class="mb-3">
-                                <label for="trip_type" class="form-label">Type of trip</label>
+                                <label for="trip_type" class="form-label">
+                                    Type of trip <span class="text-danger">*</span>
+                                </label>
                                 <select id="trip_type" class="form-select" required>
                                     <option value="" selected disabled>Choose an option</option>
                                     <option value="charter">Private Charter</option>
@@ -141,7 +156,9 @@
 
                             <!-- Message -->
                             <div class="mb-3">
-                                <label for="message" class="form-label">Tell us about what you're looking for</label>
+                                <label for="message" class="form-label">
+                                    Tell us about what you're looking for <span class="text-danger">*</span>
+                                </label>
                                 <textarea class="form-control" id="message" rows="5" required></textarea>
                                 <div class="invalid-feedback">Please tell us a bit about your trip.</div>
                             </div>
@@ -251,6 +268,16 @@
         const submitBtn = document.getElementById("submitBtn");
         const alertEl = document.getElementById("formAlert");
 
+        // All required fields we care about for per-field validation
+        const requiredFields = Array.from(
+            form.querySelectorAll("input[required], select[required], textarea[required]")
+        );
+
+        // Initialize touched state
+        requiredFields.forEach(field => {
+            field.dataset.touched = "false";
+        });
+
         function showAlert(type, message) {
             alertEl.innerHTML = `
                 <div class="alert alert-${type} mb-0" role="alert">
@@ -270,29 +297,65 @@
                 : "Send Message";
         }
 
-        // Dynamically enable/disable submit based on form validity
-        function updateSubmitState() {
-            // Add was-validated once user starts interacting so invalids show up
-            form.classList.add("was-validated");
+        // Validate a single field, but only show error if:
+        // - field is invalid AND
+        //   - field has been touched, OR
+        //   - we're forcing errors (on submit)
+        function validateField(field, force = false) {
+            if (!field) return;
 
-            if (form.checkValidity()) {
-                submitBtn.disabled = false;
-            } else {
-                submitBtn.disabled = true;
+            const isValid = field.checkValidity();
+            const touched = field.dataset.touched === "true";
+
+            if (isValid) {
+                field.classList.remove("is-invalid");
+                return;
+            }
+
+            if (force || touched) {
+                field.classList.add("is-invalid");
             }
         }
 
-        // Listen to changes on all inputs/selects/textarea to “proof” form dynamically
-        form.addEventListener("input", updateSubmitState);
-        form.addEventListener("change", updateSubmitState);
+        // Dynamically enable/disable submit based on form validity, without
+        // marking fields as invalid yet.
+        function updateSubmitState() {
+            submitBtn.disabled = !form.checkValidity();
+        }
+
+        // Mark fields as touched on first interaction and validate them
+        requiredFields.forEach(field => {
+            field.addEventListener("blur", () => {
+                field.dataset.touched = "true";
+                validateField(field, false);
+                updateSubmitState();
+            });
+
+            field.addEventListener("input", () => {
+                // Don't mark as touched on mere input if user hasn't blurred yet,
+                // but we still want to update submit state.
+                validateField(field, false);
+                updateSubmitState();
+            });
+
+            field.addEventListener("change", () => {
+                field.dataset.touched = "true";
+                validateField(field, false);
+                updateSubmitState();
+            });
+        });
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
             clearAlert();
 
-            // Final check before sending
+            // Mark all fields as touched and validate them so errors show
+            requiredFields.forEach(field => {
+                field.dataset.touched = "true";
+                validateField(field, true);
+            });
+
             if (!form.checkValidity()) {
-                form.classList.add("was-validated");
                 updateSubmitState();
                 showAlert("warning", "Please fix the highlighted fields and try again.");
                 return;
@@ -304,7 +367,10 @@
                 // Pretend success to bots
                 showAlert("success", "Thanks! Your message has been sent.");
                 form.reset();
-                form.classList.remove("was-validated");
+                requiredFields.forEach(field => {
+                    field.classList.remove("is-invalid");
+                    field.dataset.touched = "false";
+                });
                 submitBtn.disabled = true;
                 return;
             }
@@ -339,17 +405,13 @@
                     throw new Error(errMsg);
                 }
 
-                if (data && data.success) {
-                    showAlert("success", "Thanks! Your message has been sent.");
-                    form.reset();
-                    form.classList.remove("was-validated");
-                    submitBtn.disabled = true; // lock again until form is valid
-                } else {
-                    showAlert("success", "Thanks! Your message has been sent.");
-                    form.reset();
-                    form.classList.remove("was-validated");
-                    submitBtn.disabled = true;
-                }
+                showAlert("success", "Thanks! Your message has been sent.");
+                form.reset();
+                requiredFields.forEach(field => {
+                    field.classList.remove("is-invalid");
+                    field.dataset.touched = "false";
+                });
+                submitBtn.disabled = true; // lock again until form is valid
             } catch (err) {
                 console.error(err);
                 showAlert("danger", "Sorry — we couldn't send your message right now. Please email reservations@foggswatertaxi.com.");
