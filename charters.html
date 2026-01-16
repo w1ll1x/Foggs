@@ -16,8 +16,8 @@
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
     <meta content="odanadtzl0u0bp2kjxtd1c1cawwy5c" name="facebook-domain-verification"/>
-
 </head>
+
 <body>
 <nav class="navbar navbar-expand-md bg-white border-bottom">
     <div class="container-xl">
@@ -31,13 +31,13 @@
 
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto align-items-md-center">
-                <li class="nav-item me-md-3"><a class="nav-link"  href="/">Home</a></li>
-                <li class="nav-item me-md-3"><a class="nav-link"  href="taxi">Water Taxi</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item me-md-3"><a class="nav-link" href="taxi">Water Taxi</a></li>
 
                 <li class="nav-item dropdown me-md-3">
                     <a class="nav-link dropdown-toggle active" href="#" id="chartersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Charters &amp; Cruises</a>
                     <ul class="dropdown-menu shadow-sm" aria-labelledby="chartersDropdown">
-                        <li><a class="dropdown-item " href="charters" aria-current="page">Private Charters</a></li>
+                        <li><a class="dropdown-item" href="charters" aria-current="page">Private Charters</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="cruises">Public Cruises</a></li>
                     </ul>
@@ -53,7 +53,6 @@
     </div>
 </nav>
 
-
 <!-- HERO -->
 <header class="hero-banner" style="background-image:url('img/charters.webp');">
     <h1 class="display-3 fw-bold hero-title">Charters</h1>
@@ -61,126 +60,260 @@
 
 <!-- MAIN CONTENT -->
 <section class="with-bg-image py-4 py-md-5">
-    <main class="container position-relative z-1 py-4 py-md-5">
+    <div class="position-relative z-1 py-4 py-md-5">
 
-        <!-- Custom Charters intro -->
-        <section class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
-            <h2 class="h2 fw-semibold mb-3 text-cyan-700">Custom Charters</h2>
-            <p class="fs-5 mb-0">
-                Located in the heart of downtown Portland, Maine, we offer a wide array of charter experiences tailored to
-                your needs. Whether you're planning an intimate sunset cruise, a lobster bake on a secluded island, or a
-                corporate outing for your team, our fleet and crew stand ready to craft the perfect adventure on Casco Bay.
-            </p>
-        </section>
+        <!-- Container content (normal width) -->
+        <main class="container">
 
-        <!-- Small Groups -->
-        <section class="rounded-4 bg-primary text-white p-4 p-md-5 mb-4">
-            <div class="row g-4 align-items-center">
-                <div class="col-md-6">
-                    <h2 class="h3 fw-bold mb-2 text-cyan-700">Small Groups</h2>
-                    <p class="mb-3">Our small‑group charters are designed to offer personalized experiences for groups of up to six passengers. Perfect for anniversaries, family outings, or a day of island‑hopping.</p>
-                    <hr class="border-2" style="border-color: var(--cyan-300); opacity:1;" />
-                    <div class="fw-medium text-secondary">
-                        <div>$150 / hr <span class="fst-italic">(1‑hour minimum)</span></div>
-                        <div>After 10 PM: <span class="text-danger fw-semibold">+ $50 / hr</span></div>
-                        <div>After midnight: <span class="text-danger fw-semibold">+ $100 / hr</span></div>
+            <!-- Custom Charters intro -->
+            <section class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
+                <h2 class="h2 fw-semibold mb-3 text-cyan-700">Custom Charters</h2>
+                <p class="fs-5 mb-0">
+                    Located in the heart of downtown Portland, Maine, we offer a wide array of charter experiences tailored to
+                    your needs. Whether you're planning an intimate sunset cruise, a lobster bake on a secluded island, or a
+                    corporate outing for your team, our fleet and crew stand ready to craft the perfect adventure on Casco&nbsp;Bay.
+                </p>
+            </section>
+
+        </main>
+
+        <br>
+        <br>
+        <br>
+
+        <!-- FULL-WIDTH Charter Ideas (like the map section) -->
+        <section class="text-white mb-4">
+            <div class="container-fluid bg-success py-4 py-md-5">
+                <div class="px-3 px-md-4">
+                    <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
+                        <h2 class="h3 fw-bold mb-0 text-cyan-700">Charter Ideas</h2>
+                        <div class="text-secondary fw-medium">Scroll for more →</div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <img src="img/gizzy.webp" class="img-fluid rounded shadow" alt="Gizzy" />
+
+                <!-- Horizontal scroll container (full width) -->
+                <div class="d-flex flex-nowrap overflow-auto gap-4 pb-2 px-3 px-md-4">
+                    <!-- Card 1 -->
+                    <div class="flex-shrink-0" style="width: min(85vw, 360px);">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow overflow-hidden rounded-4">
+                            <div class="ratio ratio-1x1">
+                                <img
+                                        src="img/sunsetCard.webp"
+                                        alt="Intimate Sunset Cruises"
+                                        class="w-100 h-100 object-fit-cover"
+                                        loading="lazy"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 fw-semibold mb-2">Intimate Sunset Cruises</h3>
+                                <p class="mb-0">
+                                    Sail into the horizon with stunning views of Casco Bay's lighthouses and islands—perfect for couples or small groups seeking relaxation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="flex-shrink-0" style="width: min(85vw, 360px);">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow overflow-hidden rounded-4">
+                            <div class="ratio ratio-1x1">
+                                <img
+                                        src="img/bachelorettecard.webp"
+                                        alt="Bachelor and Bachelorette Partys"
+                                        class="w-100 h-100 object-fit-cover"
+                                        loading="lazy"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 fw-semibold mb-2">Bachelor &amp; Bachelorette Partys</h3>
+                                <p class="mb-0">
+                                    Amp up the fun with customizable packages, onboard music, and scenic routes for an epic celebration on the water.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="flex-shrink-0" style="width: min(85vw, 360px);">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow overflow-hidden rounded-4">
+                            <div class="ratio ratio-1x1">
+                                <img
+                                        src="img/birthdaycard.webp"
+                                        alt="Birthday Partys"
+                                        class="w-100 h-100 object-fit-cover"
+                                        loading="lazy"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 fw-semibold mb-2">Birthday Partys</h3>
+                                <p class="mb-0">
+                                    Celebrate milestones with themed decorations, catering, and fun activities aboard—ideal for all ages on Maine's beautiful bays.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="flex-shrink-0" style="width: min(85vw, 360px);">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow overflow-hidden rounded-4">
+                            <div class="ratio ratio-1x1">
+                                <img
+                                        src="img/corporatecard.webp"
+                                        alt="Corporate Outings and Team Building"
+                                        class="w-100 h-100 object-fit-cover"
+                                        loading="lazy"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 fw-semibold mb-2">Corporate Outings &amp; Team Building</h3>
+                                <p class="mb-0">
+                                    Foster collaboration with tailored charters featuring catering options and professional facilitation amid Portland's coastal beauty.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="flex-shrink-0" style="width: min(85vw, 360px);">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow overflow-hidden rounded-4">
+                            <div class="ratio ratio-1x1">
+                                <img
+                                        src="img/weddingcard.webp"
+                                        alt="Wedding Party Boat Excursions"
+                                        class="w-100 h-100 object-fit-cover"
+                                        loading="lazy"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 fw-semibold mb-2">Wedding Party Boat Excursions</h3>
+                                <p class="mb-0">
+                                    Create lasting memories with receptions, or post-wedding sails on Maine's picturesque waterways.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Large Groups -->
-        <section class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
-            <div class="row g-4 align-items-center flex-md-row-reverse">
-                <div class="col-md-6">
-                    <h2 class="h3 fw-bold mb-2 text-info">Large Groups</h2>
-                    <p class="mb-3">Our two larger vessels, the <em>Casco Bay Cat</em> and the <em>Joseph S. Kennedy</em>, comfortably accommodate up to 49 passengers—ideal for weddings, reunions, and corporate events.</p>
-                    <hr class="border-2 border-info opacity-100" />
-                    <div class="fw-medium text-secondary">
-                        <div>Under 20 guests: <strong>$300 / hr</strong> <span class="fst-italic">(2-hour minimum)</span></div>
-                        <div>20 – 49 guests: <strong>$400 / hr</strong> <span class="fst-italic">(2-hour minimum)</span></div>
-                        <div>After 10 PM: <span class="text-danger fw-semibold">+ $75 / hr</span></div>
-                        <div>After midnight: <span class="text-danger fw-semibold">+ $150 / hr</span></div>
+        <br>
+        <br>
+        <br>
+
+        <!-- Back to container content -->
+        <main class="container">
+
+            <!-- Small Groups -->
+            <section class="rounded-4 bg-primary text-white p-4 p-md-5 mb-4">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <h2 class="h3 fw-bold mb-2 text-cyan-700">Small Groups</h2>
+                        <p class="mb-3">Our small-group charters are designed to offer personalized experiences for groups of up to six passengers. Perfect for anniversaries, family outings, or a day of island-hopping.</p>
+                        <hr class="border-2" style="opacity:1;" />
+                        <div class="fw-medium text-secondary">
+                            <div>$150 / hr <span class="fst-italic">(1-hour minimum)</span></div>
+                            <div>After 10 PM: <span class=" fw-semibold">+ $50 / hr</span></div>
+                            <div>After midnight: <span class=" fw-semibold">+ $100 / hr</span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="img/gizzy.webp" class="img-fluid rounded shadow" alt="Gizzy" />
                     </div>
                 </div>
+            </section>
 
-                <div class="col-md-6">
-                    <div id="lgCarousel" class="carousel slide rounded overflow-hidden shadow" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <!-- Large Groups -->
+            <section class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
+                <div class="row g-4 align-items-center flex-md-row-reverse">
+                    <div class="col-md-6">
+                        <h2 class="h3 fw-bold mb-2">Large Groups</h2>
+                        <p class="mb-3">Our two larger vessels, the <em>Casco Bay Cat</em> and the <em>Joseph S. Kennedy</em>, comfortably accommodate up to 49 passengers—ideal for weddings, reunions, and corporate events.</p>
+                        <hr class="border-2 opacity-100" />
+                        <div class="fw-medium text-secondary">
+                            <div>Under 20 guests: <strong>$300 / hr</strong> <span class="fst-italic">(2-hour minimum)</span></div>
+                            <div>20 – 49 guests: <strong>$400 / hr</strong> <span class="fst-italic">(2-hour minimum)</span></div>
+                            <div>After 10 PM: <span class=" fw-semibold">+ $75 / hr</span></div>
+                            <div>After midnight: <span class=" fw-semibold">+ $150 / hr</span></div>
                         </div>
+                    </div>
 
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="5000">
-                                <div class="ratio ratio-16x9">
-                                    <img src="img/LB1.webp" alt="Large Group Vessel 1" class="w-100 h-100 object-fit-cover" />
+                    <div class="col-md-6">
+                        <div id="lgCarousel" class="carousel slide rounded overflow-hidden shadow" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#lgCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            </div>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="5000">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="img/LB1.webp" alt="Large Group Vessel 1" class="w-100 h-100 object-fit-cover" />
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="5000">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="img/LB2.webp" alt="Large Group Vessel 2" class="w-100 h-100 object-fit-cover" />
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="5000">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="img/LB3.webp" alt="Large Group Vessel 3" class="w-100 h-100 object-fit-cover" />
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="5000">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="img/LB4.webp" alt="Large Group Vessel 4" class="w-100 h-100 object-fit-cover" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="carousel-item" data-bs-interval="5000">
-                                <div class="ratio ratio-16x9">
-                                    <img src="img/LB2.webp" alt="Large Group Vessel 2" class="w-100 h-100 object-fit-cover" />
-                                </div>
-                            </div>
-                            <div class="carousel-item" data-bs-interval="5000">
-                                <div class="ratio ratio-16x9">
-                                    <img src="img/LB3.webp" alt="Large Group Vessel 3" class="w-100 h-100 object-fit-cover" />
-                                </div>
-                            </div>
-                            <div class="carousel-item" data-bs-interval="5000">
-                                <div class="ratio ratio-16x9">
-                                    <img src="img/LB4.webp" alt="Large Group Vessel 4" class="w-100 h-100 object-fit-cover" />
-                                </div>
-                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#lgCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#lgCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#lgCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#lgCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
+            <!-- Cancellations -->
+            <section class="bg-primary rounded-4 text-white p-4 p-md-5 mb-4">
+                <h2 class="h3 fw-bold mb-3 text-cyan-700">Cancellations</h2>
+                <p class="mb-0">We understand plans change. For a full refund, please provide notice at least <strong>48&nbsp;hours</strong> in advance for small-boat charters and <strong>30&nbsp;days</strong> in advance for large-boat charters. Weather-related cancellations are fully refundable or may be rescheduled at no cost.</p>
+            </section>
 
-        <!-- Cancellations -->
-        <section class="bg-primary rounded-4 text-white p-4 p-md-5 mb-4">
-            <h2 class="h3 fw-bold mb-3 text-cyan-700">Cancellations</h2>
-            <p class="mb-0">We understand plans change. For a full refund, please provide notice at least <strong>48 hours</strong> in advance for small‑boat charters and <strong>30 days</strong> in advance for large‑boat charters. Weather‑related cancellations are fully refundable or may be rescheduled at no cost.</p>
-        </section>
+        </main>
+    </div>
 </section>
-        <!-- Charter Highlights (Listings + Map) -->
-        <section class="text-white">
-            <div class="container-fluid bg-primary py-3">
-                <div class="row text-center">
-                    <div class="col-12">
-                        <h2 class="h1 fw-semibold text-white">Charter Highlights</h2>
-                    </div>
-                </div>
 
-                <div class="row g-4 align-items-stretch px-md-4 pb-4">
-                    <!-- Listings: hidden on < md, scrollable, with padding -->
-                    <div class="col-md-3 d-none d-md-flex">
-                        <div id="listings" class="listings light-color w-100 overflow-auto p-3 bg-secondary rounded-3 min-vh-75"></div>
-                    </div>
-
-                    <!-- Map: always visible; full width on mobile, 3/4 on md+ -->
-                    <div class="col-12 col-md-9 d-flex align-items-stretch">
-                        <div id="map" class="map flex-grow-1 w-100 rounded-3 min-vh-75"></div>
-                    </div>
-                </div>
+<!-- Charter Highlights (Listings + Map) -->
+<section class="text-white">
+    <div class="container-fluid bg-primary py-3">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="h1 fw-semibold text-white">Charter Highlights</h2>
             </div>
-        </section>
+        </div>
+
+        <div class="row g-4 align-items-stretch px-md-4 pb-4">
+            <!-- Listings: hidden on < md, scrollable, with padding -->
+            <div class="col-md-3 d-none d-md-flex">
+                <div id="listings" class="listings light-color w-100 overflow-auto p-3 bg-secondary rounded-3 min-vh-75"></div>
+            </div>
+
+            <!-- Map: always visible; full width on mobile, 3/4 on md+ -->
+            <div class="col-12 col-md-9 d-flex align-items-stretch">
+                <div id="map" class="map flex-grow-1 w-100 rounded-3 min-vh-75"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer class="bg-success text-white">
     <div class="container py-4">
@@ -232,7 +365,7 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Mapbox Script: ports from your Tailwind version, adapted for this layout -->
+<!-- Mapbox Script -->
 <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoid2lsbGl4IiwiYSI6ImNrcmJndm82djRzd3AydGwzaHVpMHZvMWsifQ.5e7mpdQ_mgANhwEKDxomgw';
 
@@ -339,9 +472,9 @@
         new mapboxgl.Popup({ closeOnClick: true })
             .setLngLat(feature.geometry.coordinates)
             .setHTML(
-                '<h5 class="mb-1">' + feature.properties.location + '</h5>' +
+                '<h5 class="mb-1 text-black">' + feature.properties.location + '</h5>' +
                 '<hr class="my-2" />' +
-                '<p class="mb-0" style="font-size:14px;">' + (feature.properties.description || '') + '</p>'
+                '<p class="mb-0 text-black" style="font-size:14px;">' + (feature.properties.description || '') + '</p>'
             )
             .addTo(map);
     }
