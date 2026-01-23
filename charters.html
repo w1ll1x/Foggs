@@ -55,8 +55,12 @@
 
 <!-- HERO -->
 <header class="hero-banner" style="background-image:url('img/charters.webp');">
-    <h1 class="display-3 fw-bold hero-title">Charters</h1>
+    <h1 class="display-3 fw-bold hero-title">
+        Charters
+        <div class="fs-4 fw-semibold mt-2 text-center">Your Maine adventure!</div>
+    </h1>
 </header>
+
 
 <!-- MAIN CONTENT -->
 <section class="with-bg-image py-4 py-md-5">
@@ -409,7 +413,7 @@
 
     map.on('load', function () {
         map.addSource('places', { type: 'geojson', data: destinations });
-        buildLocationList(destinations);
+        buildLocationList(destinations);   // <-- sidebar list (styled like your first snippet)
         addMarkers();
     });
 
@@ -426,49 +430,88 @@
             el.addEventListener('click', function (e) {
                 flyToStore(marker);
                 createPopUp(marker);
+
                 const activeItem = document.querySelector('#listings .active');
                 e.stopPropagation();
                 if (activeItem) activeItem.classList.remove('active');
+
                 const listing = document.getElementById('listing-' + marker.properties.id);
                 if (listing) listing.classList.add('active');
             });
         });
     }
 
+    // ----------------------------
+    // Sidebar list (MATCHES YOUR FIRST SNIPPET STYLING/CLASSES)
+    // ----------------------------
     function buildLocationList(data) {
-        const listings = document.getElementById('listings');
         data.features.forEach(function (store) {
+            /**
+             * Create a shortcut for `store.properties`,
+             * which will be used several times below.
+             **/
             const prop = store.properties;
-            const listing = document.createElement('div');
+
+            /* Add a new listing section to the sidebar. */
+            const listings = document.getElementById('listings');
+            const listing = listings.appendChild(document.createElement('div'));
+
+            /* Assign a unique `id` to the listing. */
             listing.id = 'listing-' + prop.id;
-            listing.className = 'listing';
 
-            const link = document.createElement('a');
-            link.href = 'javascript:void(0)';
+            /* Assign the `item` class to each listing for styling. */
+            listing.className = 'item';
+
+            /* Add the link to the individual listing created above. */
+            const link = listing.appendChild(document.createElement('a'));
+            link.href = 'javascript:void();';
+            link.className = 'title';
             link.id = 'link-' + prop.id;
-            link.className = 'fw-bold text-decoration-none';
-            link.innerText = prop.location;
+            link.innerHTML = prop.location;
 
-            listing.appendChild(link);
-            listings.appendChild(listing);
-
+            /**
+             * Listen to the element and when it is clicked, do four things:
+             * 1. Update the `currentFeature` to the store associated with the clicked link
+             * 2. Fly to the point
+             * 3. Close all other popups and display popup for clicked store
+             * 4. Highlight listing in sidebar (and remove highlight for all other listings)
+             **/
             link.addEventListener('click', function () {
-                flyToStore(store);
-                createPopUp(store);
-                const activeItem = document.querySelector('#listings .active');
-                if (activeItem) activeItem.classList.remove('active');
-                listing.classList.add('active');
+                for (let i = 0; i < data.features.length; i++) {
+                    if (this.id === 'link-' + data.features[i].properties.id) {
+                        const clickedListing = data.features[i];
+                        flyToStore(clickedListing);
+                        createPopUp(clickedListing);
+                    }
+                }
+
+                const activeItem = document.getElementsByClassName('active');
+                if (activeItem[0]) {
+                    activeItem[0].classList.remove('active');
+                }
+                this.parentNode.classList.add('active');
             });
         });
     }
 
+    /**
+     * Use Mapbox GL JS's `flyTo` to move the camera smoothly
+     * a given center point.
+     **/
     function flyToStore(feature) {
-        map.flyTo({ center: feature.geometry.coordinates, zoom: 14 });
+        map.flyTo({
+            center: feature.geometry.coordinates,
+            zoom: 14
+        });
     }
 
+    /**
+     * Create a Mapbox GL JS `Popup`.
+     **/
     function createPopUp(feature) {
         const popUps = document.getElementsByClassName('mapboxgl-popup');
         if (popUps[0]) popUps[0].remove();
+
         new mapboxgl.Popup({ closeOnClick: true })
             .setLngLat(feature.geometry.coordinates)
             .setHTML(
@@ -481,6 +524,7 @@
 
     map.addControl(new mapboxgl.NavigationControl());
 </script>
+
 
 </body>
 </html>
