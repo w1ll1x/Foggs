@@ -535,6 +535,64 @@ figure {
   margin-top: 5px;
 }
 
+/* ─── Cruise Calendar ──────────────────────────────────────────────────────── */
+.cruise-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    text-align: center;
+    font-size: .85rem;
+}
+.cal-dayname {
+    font-size: .65rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    opacity: .7;
+    padding: 2px 0 6px;
+    font-weight: 600;
+}
+.cal-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: default;
+    position: relative;
+    transition: background .12s;
+}
+.cal-cell.has-event {
+    background: rgba(255,255,255,.18);
+    font-weight: 700;
+    cursor: pointer;
+}
+.cal-cell.has-event:hover {
+    background: rgba(255,255,255,.32);
+}
+.cal-cell.is-selected {
+    background: #fff !important;
+    color: #0e7490 !important;
+}
+.cal-cell.is-today {
+    box-shadow: 0 0 0 2px rgba(255,255,255,.7);
+}
+.cal-dot {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #7dd3fc;
+}
+.cal-event-card {
+    background: rgba(255,255,255,.15);
+    border-radius: .5rem;
+    padding: .75rem 1rem;
+    margin-bottom: .5rem;
+}
+
 /*
 Extra small (xs) devices (portrait phones, less than 576px)
 No media query since this is the default in Bootstrap
