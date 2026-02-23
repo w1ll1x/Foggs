@@ -124,11 +124,13 @@ border-radius: 5px;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.75);
+  pointer-events: none;
 }
 .hero video::-webkit-media-controls,
+.hero video::-webkit-media-controls-enclosure,
+.hero video::-webkit-media-controls-panel,
 .hero video::-webkit-media-controls-start-playback-button {
   display: none !important;
-  appearance: none;
 }
 .hero .hero-content {
   position: relative;
