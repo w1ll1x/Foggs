@@ -126,12 +126,6 @@ border-radius: 5px;
   filter: brightness(0.75);
   pointer-events: none;
 }
-.hero video::-webkit-media-controls,
-.hero video::-webkit-media-controls-enclosure,
-.hero video::-webkit-media-controls-panel,
-.hero video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-}
 .hero .hero-content {
   position: relative;
   z-index: 1;

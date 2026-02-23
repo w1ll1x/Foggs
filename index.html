@@ -49,7 +49,7 @@
 
 <!-- HERO -->
 <section class="hero bg-dark">
-    <video autoplay loop muted playsinline preload="metadata">
+    <video autoplay loop muted playsinline>
         <source src="img/compressed.mp4" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
@@ -356,15 +356,15 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Nudge Safari into autoplaying the muted hero video
+  // Autoplay hero video in Safari; fall back to first user interaction
   const heroVideo = document.querySelector('.hero video');
   if (heroVideo) {
-    const tryPlay = () => heroVideo.play().catch(() => {});
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', tryPlay);
-    } else {
-      tryPlay();
-    }
+    heroVideo.play().catch(() => {
+      // Autoplay blocked — play on first tap or click anywhere
+      const resume = () => { heroVideo.play().catch(() => {}); };
+      document.addEventListener('click',      resume, { once: true });
+      document.addEventListener('touchstart', resume, { once: true });
+    });
   }
 </script>
 <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
