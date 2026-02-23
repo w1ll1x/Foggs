@@ -355,6 +355,11 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Nudge Safari into autoplaying the muted hero video
+  const heroVideo = document.querySelector('.hero video');
+  if (heroVideo) heroVideo.play().catch(() => {});
+</script>
 <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 
 <!-- Cruise Calendar -->

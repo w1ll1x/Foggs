@@ -125,6 +125,11 @@ border-radius: 5px;
   object-fit: cover;
   filter: brightness(0.75);
 }
+.hero video::-webkit-media-controls,
+.hero video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  appearance: none;
+}
 .hero .hero-content {
   position: relative;
   z-index: 1;
