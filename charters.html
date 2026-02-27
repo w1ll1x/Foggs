@@ -320,7 +320,7 @@
     </div>
 </section>
 
-<footer class="bg-success text-white">
+<footer class="bg-info text-white">
     <div class="container py-4">
         <div class="row g-4 align-items-center text-center text-md-start">
             <!-- Contact -->
@@ -486,9 +486,9 @@
                     }
                 }
 
-                const activeItem = document.getElementsByClassName('active');
-                if (activeItem[0]) {
-                    activeItem[0].classList.remove('active');
+                const activeItem = document.querySelector('#listings .active');
+                if (activeItem) {
+                    activeItem.classList.remove('active');
                 }
                 this.parentNode.classList.add('active');
             });
