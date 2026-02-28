@@ -213,6 +213,12 @@ border-radius: 5px;
 .quote-mark { font-size: 2rem; line-height: 1; }
 
 /*---Media Queries --*/
+@media (min-width: 768px) {
+  :root {
+    font-size: 17px;
+  }
+}
+
 @media (max-width: 992px) {}
 
 @media (max-width: 768px) {
