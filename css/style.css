@@ -1,10 +1,7 @@
 
-
-
 .lobster-font {
   font-family: 'Lobster', sans-serif;
 }
-
 
 .fa-facebook {
   color: #3b5998;
@@ -24,56 +21,25 @@
   color: #e33d26;
 }
 
-
-
-.card-text {
-  font-size: 18px;
-  color: #373535;
-}
-
-
-
-
 .accordion-button:not(.collapsed) {
-  color: white; /* Insert the color you want */
+  color: white;
 }
 
-.accordion-body{
+.accordion-body {
   padding: 0;
-}
-
-.card-header:hover{
-  background-color: #be1e09;
-}
-
-.card-header.item.active{
-  background-color: #be1e09;
-}
-
-.card-body {
-border-radius: 5px;
-
-
 }
 
 .home-link {
   height: 75px;
-  width:75px;
+  width: 75px;
 }
 
 .card {
-
   border: none;
-
 }
 
 .link-img:hover {
-  filter:brightness(80%) ;
-
-}
-
-.align-center {
-  text-align: center;
+  filter: brightness(80%);
 }
 
 /* custom.css */
@@ -91,13 +57,10 @@ border-radius: 5px;
   --bs-dark: #212121;
 }
 
-
-
 .with-bg-image {
   background: url('../img/contour-lines.svg') center/cover no-repeat;
-  /* simulate 50% opacity using blend with a translucent layer */
   background-color: rgba(255,255,255,.5);
-  background-blend-mode: multiply; /* or 'overlay' depending on look */
+  background-blend-mode: multiply;
 }
 
 .with-bg-image-light {
@@ -176,13 +139,13 @@ border-radius: 5px;
   z-index: 2;
 }
 @media (max-width: 767.98px) {
-  .stacked-base { display:none; }
-  .stacked-top  { position: static; transform: none; width: 66%; margin-inline:auto; }
+  .stacked-base { display: none; }
+  .stacked-top  { position: static; transform: none; width: 66%; margin-inline: auto; }
 }
 
 /* Featured Destination carousel sizing */
 .featured-carousel {
-  height: 24rem; /* ≈ md:h-96 */
+  height: 24rem;
   border-radius: .75rem;
   overflow: hidden;
 }
@@ -193,47 +156,35 @@ border-radius: 5px;
   display: block;
 }
 
-
 :root {
-  --cyan-500:#06b6d4;   /* matches your home page */
-  --cyan-700:#0e7490;
+  --cyan-500: #06b6d4;
+  --cyan-700: #0e7490;
 }
 .bg-secondary { background-color: var(--cyan-500) !important; }
-.bg-primary { background-color: var(--cyan-700) !important; }
+.bg-primary   { background-color: var(--cyan-700) !important; }
 
 .hero-banner {
   height: 500px; background-size: cover; background-position: center;
-  display:grid; place-items:center; position:relative;
+  display: grid; place-items: center; position: relative;
 }
 .hero-title {
-  color:#fff; text-shadow:0 2px 16px rgba(0,0,0,.45);
-  background:rgba(0,0,0,.15); border-radius:.5rem; padding:.75rem 1rem;
+  color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,.45);
+  background: rgba(0,0,0,.15); border-radius: .5rem; padding: .75rem 1rem;
 }
+
 /* Testimonials quote mark */
 .quote-mark { font-size: 2rem; line-height: 1; }
 
-/*---Media Queries --*/
+/*--- Media Queries ---*/
 @media (min-width: 768px) {
   :root {
     font-size: 17px;
   }
 }
 
-@media (max-width: 992px) {}
-
 @media (max-width: 768px) {
-
   .sub-heading {
     font-size: 30px;
-  }
-
-  .section-heading{
-    font-size: 36px;
-  }
-
-  .charterCaption h1{
-    padding-top: 3rem;
-    font-size: 100px;
   }
 
   .paragraph {
@@ -245,144 +196,50 @@ border-radius: 5px;
     font-size: 14px;
   }
 
-  .card-text {
-    font-size: 16px;
-  }
-
-  .home-caption h3 {
-
-    font-size: 24px;
-  }
-
-
-
-
-  .contactCaption h1 {
-    font-size: 100px;
-  }
-
-  .eventCaption h1 {
-    font-size: 70px;
-  }
-
   .social a {
     font-size: 36px;
   }
 
-  .footer{
+  .footer {
     font-size: 18px;
   }
-
 }
 
-
-
 @media (max-width: 576px) {
-
-  .charterCaption h1{
-    padding-top: 5rem;
-    font-size: 70px;
-  }
-
-  .table-responsive{
+  .table-responsive {
     padding: 0;
   }
+
   .map-row {
     margin: 0;
   }
 
   .home-link {
     height: 35px;
-    width:35px;
-  }
-
-  .fleet-row {
-    padding: 0rem!important;
+    width: 35px;
   }
 
   .card {
-    padding: 0rem!important;
+    padding: 0rem !important;
   }
 
   .col-sm-12 {
     padding-left: 0 !important;
     padding-right: 0 !important;
-
   }
-
-  .listings-section {
-    display: none;
-  }
-
-  .contactCaption h1 {
-    font-size: 70px;
-    line-height: 1.2;
-  }
-
-  .eventCaption h1 {
-    font-size: 50px;
-  }
-
-  .home-caption h3 {
-    font-size: 22px;
-  }
-
-
 }
 
-/*---Firefox Bug Fix --*/
+/*--- Firefox Bug Fix ---*/
 .carousel-item {
-  transition: -webkit-form 0.5s ease;
   transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
   object-fit: cover;
 }
 
-/*--- Fixed Background Image --*/
-figure {
-  position: relative;
-  width: 100%;
-  height: 60%;
-  margin: 0!important;
-}
-.fixed-wrap {
-  clip: rect(0, auto, auto, 0);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-#fixed {
-  background-image: url('../img/chart.webp');
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  will-change: transform;
-}
-
-/*--- Bootstrap Padding Fix --*/
+/*--- Bootstrap Padding Fix ---*/
 [class*="col-"] {
   padding: 1rem;
-}
-
-.sidebar {
-  position: absolute;
-  width: 33.3333%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: auto;
-  border-right: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 footer {
@@ -417,51 +274,18 @@ body > *:has(+ footer)::after {
   text-decoration: none;
 }
 
-
-
-
-.paragraph a{
+.paragraph a {
   font-weight: bold;
   color: #373535;
 }
 
-.paragraph a:hover{
+.paragraph a:hover {
   color: #e33d26;
 }
 
-
-
-
-
-.heading {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  min-height: 60px;
-  line-height: 60px;
-  padding: 0 10px;
-  background-color: #00853e;
-  color: #fff;
-}
-
-.fa-guitar, .fa-map, .fa-anchor {
-  font-size: 2rem;
-}
-
-
-
 .map {
-  width: vw;
   height: 550px;
 }
-
-.contact-img {
-  border: 6px solid white;
-  width: auto;
-  max-height: 300px;
-  border-radius:50%;
-}
-
-
 
 .listings {
   height: 550px;
@@ -499,15 +323,6 @@ body > *:has(+ footer)::after {
   color: #e33d26;
 }
 
-
-.fleet-row {
-  padding: 1rem;
-}
-
-
-
-
-
 .marker {
   border: none;
   cursor: pointer;
@@ -515,18 +330,6 @@ body > *:has(+ footer)::after {
   width: 36px;
   background-image: url(../img/mapMarker.png);
   background-color: rgba(0, 0, 0, 0);
-}
-
-.clearfix {
-  display: block;
-}
-
-.clearfix:after {
-  content: '.';
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
 }
 
 /* Marker tweaks */
@@ -550,8 +353,8 @@ body > *:has(+ footer)::after {
 .mapboxgl-popup-content h4 {
   margin: 0;
   display: block;
-  padding: 5px 5px 5px 5px;
-  font-weight: 4000;
+  padding: 5px;
+  font-weight: 700;
   text-align: left;
 }
 
@@ -563,81 +366,54 @@ body > *:has(+ footer)::after {
   cursor: pointer;
 }
 
-.mapboxgl-popup-anchor-top>.mapboxgl-popup-content {
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
   margin-top: 5px;
 }
 
 /* ─── Cruise Calendar ──────────────────────────────────────────────────────── */
 .cruise-cal-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 3px;
-    text-align: center;
-    font-size: .85rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  text-align: center;
+  font-size: .85rem;
 }
 .cal-dayname {
-    font-size: .65rem;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    opacity: .7;
-    padding: 2px 0 6px;
-    font-weight: 600;
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  opacity: .7;
+  padding: 2px 0 6px;
+  font-weight: 600;
 }
 .cal-cell {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: default;
-    position: relative;
-    transition: background .12s;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: default;
+  position: relative;
+  transition: background .12s;
 }
 .cal-cell.has-event {
-    background: rgba(255,255,255,.18);
-    font-weight: 700;
-    cursor: pointer;
+  background: rgba(255,255,255,.18);
+  font-weight: 700;
+  cursor: pointer;
 }
 .cal-cell.has-event:hover {
-    background: rgba(255,255,255,.32);
+  background: rgba(255,255,255,.32);
 }
 .cal-cell.is-selected {
-    background: #fff !important;
-    color: #0e7490 !important;
+  background: #fff !important;
+  color: #0e7490 !important;
 }
 .cal-cell.is-today {
-    box-shadow: 0 0 0 2px rgba(255,255,255,.7);
-}
-.cal-dot {
-    position: absolute;
-    bottom: 3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #7dd3fc;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.7);
 }
 .cal-event-card {
-    background: rgba(255,255,255,.15);
-    border-radius: .5rem;
-    padding: .75rem 1rem;
-    margin-bottom: .5rem;
+  background: rgba(255,255,255,.15);
+  border-radius: .5rem;
+  padding: .75rem 1rem;
+  margin-bottom: .5rem;
 }
-
-/*
-Extra small (xs) devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-
-Small (sm) devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium (md) devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra (xl) large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-*/
