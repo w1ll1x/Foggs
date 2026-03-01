@@ -149,6 +149,11 @@
   border-radius: .75rem;
   overflow: hidden;
 }
+.featured-carousel .carousel,
+.featured-carousel .carousel-inner,
+.featured-carousel .carousel-item {
+  height: 100%;
+}
 .featured-carousel .carousel-item img {
   width: 100%;
   height: 100%;
