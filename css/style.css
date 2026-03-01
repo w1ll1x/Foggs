@@ -191,13 +191,28 @@
   box-shadow: none;
   background: rgba(0,0,0,0.05);
 }
-.navbar-toggler .fa-bars {
-  font-size: 1.4rem;
-  color: #0e7490;
-  transition: transform 0.3s ease;
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
 }
-.navbar-toggler[aria-expanded="true"] .fa-bars {
-  transform: rotate(90deg);
+.nav-hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #0e7490;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+.navbar-toggler[aria-expanded="true"] .nav-hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-toggler[aria-expanded="true"] .nav-hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggler[aria-expanded="true"] .nav-hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 .navbar-collapse {
   transition: height 0.25s ease;
