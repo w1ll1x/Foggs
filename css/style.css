@@ -140,7 +140,7 @@
 }
 @media (max-width: 767.98px) {
   .stacked-base { display: none; }
-  .stacked-top  { position: static; transform: none; width: 66%; margin-inline: auto; }
+  .stacked-top  { position: static; transform: none; width: 80%; margin-inline: auto; }
 }
 
 /* Featured Destination carousel sizing */
