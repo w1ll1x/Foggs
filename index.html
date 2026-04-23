@@ -178,6 +178,9 @@
 <!--            </div>-->
 <!--        </div>-->
 
+        <!-- Featured Cruise (rotates daily) -->
+        <div id="featured-cruise-card" class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4"></div>
+
         <!-- Featured Destination -->
         <div class="bg-primary text-white rounded-4 p-4 p-md-5 mb-4">
             <div class="row g-4 align-items-stretch">
@@ -541,6 +544,91 @@ document.getElementById('cal-next').addEventListener('click', () => {
   clearPanel();
   renderCalendar();
 });
+
+// ── Featured Cruise (rotates once per day) ────────────────────────────────────
+(function () {
+  const cruises = [
+    {
+      title: 'Portland Maine Sunset Cruise',
+      season: 'Jun – Sep',
+      days: ['Thu', 'Fri', 'Sat'],
+      time: 'Evening',
+      desc: 'Board the UB-85 Joseph S. Kennedy and enjoy an hour and a half cruise around the harbor throughout the summer at sunset!',
+      img: 'img/livemusic.webp',
+      imgAlt: 'Portland Maine Sunset Cruise on Casco Bay',
+      bookUrl: 'https://fareharbor.com/embeds/book/foggswatertaxi/items/606166/?full-items=yes&flow=955616',
+      infoUrl: 'sunset'
+    },
+    {
+      title: 'Beer, Wine &amp; Oysters Cruise',
+      season: 'Jun – Sep',
+      days: ['Fri', 'Sat', 'Sun'],
+      time: 'Afternoon',
+      desc: 'All-inclusive Beer, Wine &amp; Oysters Cruise on Portland Harbor. Fresh local oysters on the half shell with house mignonette, beer, wine, and canned cocktails included.',
+      img: 'img/oysters.webp',
+      imgAlt: 'Beer, Wine & Oysters Cruise on Portland Harbor',
+      bookUrl: 'https://fareharbor.com/embeds/book/foggswatertaxi/items/461466/?full-items=yes&flow=955616',
+      infoUrl: 'bwoc'
+    },
+    {
+      title: 'Wednesday Night Live Music Sunset Cruise',
+      season: 'Jun – Sep',
+      days: ['Wed'],
+      time: 'Evening',
+      desc: 'Join us on the Casco Bay Cat every Wednesday night for live music, beautiful sunsets, and great company. BYOB — a cooler with ice is provided.',
+      img: 'img/sunset.webp',
+      imgAlt: 'Wednesday Night Live Music Sunset Cruise on Casco Bay',
+      bookUrl: 'https://fareharbor.com/embeds/book/foggswatertaxi/items/461470/?full-items=yes&flow=955616',
+      infoUrl: 'livemusic'
+    },
+    {
+      title: 'Midday on the Bay',
+      season: 'Jun – Sep',
+      days: ['Thu', 'Fri', 'Sat', 'Sun'],
+      time: 'Midday',
+      desc: 'Board the Joseph S. Kennedy for a 90-minute cruise on Casco Bay with close views of historic forts, working lighthouses, and offshore islands.',
+      img: 'img/DJI_0890.webp',
+      imgAlt: 'Midday on the Bay cruise on Casco Bay',
+      bookUrl: 'https://fareharbor.com/embeds/book/foggswatertaxi/items/532278/?full-items=yes&flow=955616',
+      infoUrl: 'midday'
+    }
+  ];
+
+  const daysSinceEpoch = Math.floor(Date.now() / 86400000);
+  const c = cruises[daysSinceEpoch % cruises.length];
+  const imgRight = (daysSinceEpoch % 2 === 0);
+
+  const badges = c.days.map(d =>
+    `<span class="badge rounded-pill bg-white text-primary fw-semibold fs-6">${d}</span>`
+  ).join('');
+
+  const textCol = `
+    <div class="col-md-6 order-2 order-md-${imgRight ? 1 : 2}">
+      <span class="text-uppercase small text-info">Featured Cruise</span>
+      <h3 class="display-6 fw-semibold mt-1">${c.title}</h3>
+      <div class="d-flex flex-wrap gap-2 mt-2 mb-1 align-items-center">
+        <span class="opacity-75 me-1">${c.season}</span>
+        ${badges}
+        <span class="badge rounded-pill border border-white border-opacity-75 text-white fw-normal fs-6">${c.time}</span>
+      </div>
+      <p class="mt-3 mb-4">${c.desc}</p>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <a href="${c.bookUrl}" class="btn btn-light text-info fw-semibold">Book Now</a>
+        <a href="${c.infoUrl}" class="btn btn-outline-light">More Info</a>
+        <a href="cruises" class="btn btn-outline-light">All Cruises</a>
+      </div>
+    </div>`;
+
+  const imgCol = `
+    <div class="col-md-6 order-1 order-md-${imgRight ? 2 : 1}">
+      <div class="bg-white rounded-4 shadow overflow-hidden">
+        <img src="${c.img}" alt="${c.imgAlt}" class="img-fluid w-100" />
+      </div>
+    </div>`;
+
+  document.getElementById('featured-cruise-card').innerHTML =
+    `<div class="row align-items-center g-3">${textCol}${imgCol}</div>`;
+})();
 </script>
 
 </body>
