@@ -21,6 +21,7 @@
         .accordion-button {
             background-color: var(--bs-primary) !important;
             color: #fff !important;
+            border-bottom: 1px solid rgba(255,255,255,.2) !important;
         }
         .accordion-button::after {
             filter: invert(1);
@@ -29,13 +30,18 @@
             background-color: var(--bs-primary) !important;
             color: #fff !important;
             box-shadow: none;
+            border-bottom: none !important;
         }
         .accordion-item {
-            border-color: var(--bs-primary);
+            border: none;
+            margin-bottom: .25rem;
+            border-radius: .5rem !important;
+            overflow: hidden;
         }
         .accordion-body {
             background-color: var(--bs-secondary);
             color: #fff;
+            border: none;
         }
         .accordion-body a {
             color: #fff;
