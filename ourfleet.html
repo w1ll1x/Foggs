@@ -25,6 +25,21 @@
     <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .card.bg-primary .table {
+            background-color: var(--bs-secondary);
+            color: var(--bs-primary);
+            border-radius: .5rem;
+            overflow: hidden;
+            border-collapse: separate;
+            border-spacing: 0;
+            --bs-table-border-color: rgba(255,255,255,.15);
+        }
+        .card.bg-primary .table td {
+            background-color: var(--bs-secondary);
+            color: var(--bs-primary);
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-md bg-white border-bottom">
@@ -99,7 +114,7 @@
 
         <!-- Martine -->
         <div class="col d-flex">
-            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+            <div class="card border-0 bg-primary shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
                 <div class="w-100" style="aspect-ratio:1/1;">
                     <div id="carouselMartine" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -128,7 +143,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="card-body d-flex flex-column">
+                <div class="card-body d-flex flex-column text-white">
                     <h4 class="fw-semibold mb-2">Martine</h4>
                     <p class="">
                         The Martine is our red taxi with outside bench seating, a full cabin, bathroom, and Bluetooth sound system.
@@ -141,7 +156,7 @@
                         </tr>
                         <tr>
                             <td colspan="2"><strong>Capacity:</strong> 6 people</td>
-                            <td colspan="2"><strong>Power:</strong> Suzuki 300</td>
+                            <td colspan="2"><strong>Power:</strong> Yamaha 300</td>
                         </tr>
                         </tbody>
                     </table>
@@ -151,7 +166,7 @@
 
         <!-- Silver Lady -->
         <div class="col d-flex">
-            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+            <div class="card border-0 bg-primary shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
                 <div class="w-100" style="aspect-ratio:1/1;">
                     <div id="carouselSilver" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -180,7 +195,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="card-body d-flex flex-column">
+                <div class="card-body d-flex flex-column text-white">
                     <h4 class="fw-semibold mb-2">Silver Lady</h4>
                     <p class="">
                         The Silver Lady is our silver taxi with outside bench seating, a full cabin, bathroom, and Bluetooth sound system.
@@ -193,7 +208,7 @@
                         </tr>
                         <tr>
                             <td colspan="2"><strong>Capacity:</strong> 6 people</td>
-                            <td colspan="2"><strong>Power:</strong> Suzuki 200</td>
+                            <td colspan="2"><strong>Power:</strong> Yamaha 300</td>
                         </tr>
                         </tbody>
                     </table>
@@ -203,7 +218,7 @@
 
         <!-- Vesta Merle -->
         <div class="col d-flex">
-            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+            <div class="card border-0 bg-primary shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
                 <div class="w-100" style="aspect-ratio:1/1;">
                     <div id="carouselMerle" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -232,7 +247,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="card-body d-flex flex-column">
+                <div class="card-body d-flex flex-column text-white">
                     <h4 class="fw-semibold mb-2">Vesta Merle</h4>
                     <p class="">
                         The Vesta Merle is our largest taxi with outside bench seating, a full cabin, bathroom, and Bluetooth sound system.
@@ -245,7 +260,7 @@
                         </tr>
                         <tr>
                             <td colspan="2"><strong>Capacity:</strong> 6 people</td>
-                            <td colspan="2"><strong>Power:</strong> Suzuki 350</td>
+                            <td colspan="2"><strong>Power:</strong> 2× Honda 250</td>
                         </tr>
                         </tbody>
                     </table>
@@ -255,7 +270,7 @@
 
         <!-- Gizzy -->
         <div class="col d-flex">
-            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+            <div class="card border-0 bg-primary shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
                 <div class="w-100" style="aspect-ratio:1/1;">
                     <div id="carouselGizzy" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -284,7 +299,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="card-body d-flex flex-column">
+                <div class="card-body d-flex flex-column text-white">
                     <h4 class="fw-semibold mb-2">Gizzy</h4>
                     <p class="">
                         The Gizzy is our blue cuddy cabin with a canvas cover. It has a head, Bluetooth sound system, and plenty of comfortable seating. We use the Gizzy primarily for small charters.
@@ -307,7 +322,7 @@
 
         <!-- Lawman -->
         <div class="col d-flex">
-            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+            <div class="card border-0 bg-primary shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
                 <div class="w-100" style="aspect-ratio:1/1;">
                     <div id="carouselLawman" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -336,7 +351,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="card-body d-flex flex-column">
+                <div class="card-body d-flex flex-column text-white">
                     <h4 class="fw-semibold mb-2">Lawman</h4>
                     <p class="">
                         The Lawman is our flat-bottom aluminum-hulled boat with seating in both the stern and bow. We primarily use the Lawman for beach drops.
@@ -359,7 +374,7 @@
 
         <!-- Casco Bay Cat -->
         <div class="col d-flex">
-            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+            <div class="card border-0 bg-primary shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
                 <div class="w-100" style="aspect-ratio:1/1;">
                     <div id="carouselCat" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -400,7 +415,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="card-body d-flex flex-column">
+                <div class="card-body d-flex flex-column text-white">
                     <h4 class="fw-semibold mb-2">Casco Bay Cat</h4>
                     <p class="">
                         The Casco Bay Cat is our catamaran with a walk-around deck, tons of seating, an epic Bluetooth sound system, a full-size head (bathroom), and a comfortably spacious cabin.
@@ -423,7 +438,7 @@
 
         <!-- UB85 Joseph S. Kennedy -->
         <div class="col d-flex">
-            <div class="card border border-secondary border-3 shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
+            <div class="card border-0 bg-primary shadow-sm rounded-3 overflow-hidden w-100 d-flex flex-column">
                 <div class="w-100" style="aspect-ratio:1/1;">
                     <div id="carouselUB" class="carousel carousel-dark slide h-100" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -452,7 +467,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="card-body d-flex flex-column">
+                <div class="card-body d-flex flex-column text-white">
                     <h4 class="fw-semibold mb-2">UB85 Joseph S. Kennedy</h4>
                     <p class="">
                         The Joseph S. Kennedy is a 50 ft. Navy launch built in 1985. We refitted it as a charter boat which can accommodate 49 people. The Kennedy has a head as well as a Bluetooth sound system.
