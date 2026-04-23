@@ -17,6 +17,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/cf2efbd62f.js" crossorigin="anonymous" defer></script>
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .accordion-button {
+            background-color: var(--bs-primary) !important;
+            color: #fff !important;
+        }
+        .accordion-button::after {
+            filter: invert(1);
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: var(--bs-primary) !important;
+            color: #fff !important;
+            box-shadow: none;
+        }
+        .accordion-item {
+            border-color: var(--bs-primary);
+        }
+        .accordion-body {
+            background-color: var(--bs-secondary);
+            color: #fff;
+        }
+        .accordion-body a {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 
