@@ -29,6 +29,30 @@
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
     <meta content="odanadtzl0u0bp2kjxtd1c1cawwy5c" name="facebook-domain-verification"/>
 
+    <style>
+        #groupVesselAccordion .accordion-button {
+            background-color: var(--bs-primary) !important;
+            color: #fff !important;
+            border-bottom: 1px solid rgba(255,255,255,.2) !important;
+        }
+        #groupVesselAccordion .accordion-button::after {
+            filter: invert(1);
+        }
+        #groupVesselAccordion .accordion-button:not(.collapsed) {
+            background-color: var(--bs-primary) !important;
+            color: #fff !important;
+            box-shadow: none;
+            border-bottom: none !important;
+        }
+        #groupVesselAccordion .accordion-item {
+            border: none;
+            border-radius: .5rem !important;
+            overflow: hidden;
+        }
+        #groupVesselAccordion .accordion-body {
+            background-color: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -173,8 +197,8 @@
 
         <div class="accordion" id="groupVesselAccordion">
             <div class="accordion-item ">
-                <h2 class="accordion-header bg-secondary text-primary" id="groupVesselHeading">
-                    <button class="accordion-button collapsed bg-secondary text-primary rounded" type="button"
+                <h2 class="accordion-header" id="groupVesselHeading">
+                    <button class="accordion-button collapsed" type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#groupVesselCollapse"
                             aria-expanded="false"
