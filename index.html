@@ -432,11 +432,28 @@ function buildSchedule() {
     'https://fareharbor.com/embeds/book/foggswatertaxi/items/606166/?full-items=yes&flow=955616',
     'Evening');
 
-  // Wednesday Night Live Music Sunset Cruise — Wed, Jun 3 – Sep 2
-  add('2026-06-03','2026-09-02',[3],
-    'Wednesday Night Live Music Sunset Cruise',
-    'https://fareharbor.com/embeds/book/foggswatertaxi/items/461470/?full-items=yes&flow=955616',
-    'Evening');
+  // Wednesday Night Live Music Sunset Cruise — specific dates with band names
+  const lmURL = 'https://fareharbor.com/embeds/book/foggswatertaxi/items/461470/?full-items=yes&flow=955616';
+  [
+    ['2026-06-03', 'Live Music Cruise — Frenize',                '6:30–8:30 PM'],
+    ['2026-06-10', 'Live Music Cruise — Coconut Trampoline',     '6:30–8:30 PM'],
+    ['2026-06-17', 'Live Music Cruise — Jarrett Villeneuve Band','7–9 PM'],
+    ['2026-06-22', 'Live Music Cruise — Below Grade',            '7–9 PM'],
+    ['2026-06-24', 'Live Music Cruise — Seagrass',               '7–9 PM'],
+    ['2026-07-01', 'Live Music Cruise — Frenzie',                '7–9 PM'],
+    ['2026-07-08', 'Live Music Cruise — White Mountain Ramblers','7–9 PM'],
+    ['2026-07-13', 'Live Music Cruise — Frenzie',                '7–9 PM'],
+    ['2026-07-15', 'Live Music Cruise — Party Time Excellent',   '7–9 PM'],
+    ['2026-07-22', 'Live Music Cruise — Seagrass',               '7–9 PM'],
+    ['2026-07-29', 'Live Music Cruise — Jarrett Villeneuve Band','7–9 PM'],
+    ['2026-08-05', 'Live Music Cruise — Frenzie',                '6:30–8:30 PM'],
+    ['2026-08-12', 'Live Music Cruise — Party Time Excellent',   '6:30–8:30 PM'],
+    ['2026-08-19', 'Live Music Cruise — Blonde Faith',           '6–8 PM'],
+    ['2026-08-26', 'Live Music Cruise — Seagrass',               '6–8 PM'],
+    ['2026-09-02', 'Live Music Cruise — Jamsterdam',             '6–8 PM'],
+  ].forEach(([date, name, time]) => {
+    (sched[date] = sched[date] || []).push({ name, url: lmURL, time });
+  });
 
   // 4th of July Fireworks — Jul 4 only (no BWOC or Sunset cruise that day)
   if (sched['2026-07-04']) {
