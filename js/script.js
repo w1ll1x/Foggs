@@ -129,14 +129,14 @@ class trip {
                 this.fare -= 10;
             }
 
-            if ((this.time >= "22:00" && this.time < "24:00") || (this.time >= "05:30" && this.time < "06:30")) {
+            if ((this.time >= "22:00") || (this.time >= "05:30" && this.time <= "06:44")) {
                 this.fare += 20;
                 if (this.rs === "Yes") {
                     this.fare -= 10;
                 }
-            } else if ((this.time >= "00:00" && this.time < "02:00") || (this.time >= "04:30" && this.time < "05:30")) {
+            } else if ((this.time >= "00:00" && this.time <= "01:59") || (this.time >= "04:30" && this.time <= "05:29")) {
                 this.fare += 55;
-            } else if (this.time >= "02:00" && this.time < "04:30") {
+            } else if (this.time >= "02:00" && this.time <= "04:29") {
                 this.fare += 55;
                 this.fare *= 2;
             } else {
