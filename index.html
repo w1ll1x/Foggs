@@ -400,7 +400,7 @@
 function buildSchedule() {
   const sched = {};
 
-  function add(startStr, endStr, days, name, url, time, duration) {
+  function add(startStr, endStr, days, name, url, time, duration, infoUrl) {
     const [sy,sm,sd] = startStr.split('-').map(Number);
     const [ey,em,ed] = endStr.split('-').map(Number);
     const cur = new Date(sy, sm-1, sd);
@@ -408,7 +408,7 @@ function buildSchedule() {
     while (cur <= end) {
       if (days.includes(cur.getDay())) {
         const k = `${cur.getFullYear()}-${String(cur.getMonth()+1).padStart(2,'0')}-${String(cur.getDate()).padStart(2,'0')}`;
-        (sched[k] = sched[k] || []).push({ name, url, time, duration });
+        (sched[k] = sched[k] || []).push({ name, url, time, duration, infoUrl });
       }
       cur.setDate(cur.getDate() + 1);
     }
@@ -418,19 +418,19 @@ function buildSchedule() {
   add('2026-06-11','2026-09-13',[0,4,5,6],
     'Midday on the Bay',
     'https://fareharbor.com/embeds/book/foggswatertaxi/items/532278/?full-items=yes&flow=955616',
-    'Midday', '1.5 hrs');
+    'Midday', '1.5 hrs', 'midday');
 
   // Beer, Wine & Oysters — Fri Sat Sun, Jun 12 – Sep 13
   add('2026-06-12','2026-09-13',[0,5,6],
     'Beer, Wine & Oysters Cruise',
     'https://fareharbor.com/embeds/book/foggswatertaxi/items/461466/?full-items=yes&flow=955616',
-    'Afternoon', '1.5 hrs');
+    'Afternoon', '1.5 hrs', 'bwoc');
 
   // Portland Maine Sunset Cruise — Thu Fri Sat, Jun 11 – Sep 12
   add('2026-06-11','2026-09-12',[4,5,6],
     'Portland Maine Sunset Cruise',
     'https://fareharbor.com/embeds/book/foggswatertaxi/items/606166/?full-items=yes&flow=955616',
-    'Evening', '1.5 hrs');
+    'Evening', '1.5 hrs', 'sunset');
 
   // Wednesday Night Live Music Sunset Cruise — specific dates with band names
   const lmURL = 'https://fareharbor.com/embeds/book/foggswatertaxi/items/461470/?full-items=yes&flow=955616';
@@ -452,7 +452,7 @@ function buildSchedule() {
     ['2026-08-26', 'Live Music Cruise — Seagrass',               '6–8 PM'],
     ['2026-09-02', 'Live Music Cruise — Jamsterdam',             '6–8 PM'],
   ].forEach(([date, name, time]) => {
-    (sched[date] = sched[date] || []).push({ name, url: lmURL, time, duration: '2 hrs' });
+    (sched[date] = sched[date] || []).push({ name, url: lmURL, time, duration: '2 hrs', infoUrl: 'livemusic' });
   });
 
   // 4th of July Fireworks — Jul 4 only (no BWOC or Sunset cruise that day)
@@ -464,10 +464,10 @@ function buildSchedule() {
   (sched['2026-07-04'] = sched['2026-07-04'] || []).push(
     { name: '4th of July Fireworks Cruise — Casco Bay Cat',
       url: 'https://fareharbor.com/embeds/book/foggswatertaxi/items/?flow=955616',
-      time: '8:00 PM', duration: '2 hrs' },
+      time: '8:00 PM', duration: '2 hrs', infoUrl: 'fireworks' },
     { name: '4th of July Fireworks Cruise — Joseph S. Kennedy',
       url: 'https://fareharbor.com/embeds/book/foggswatertaxi/items/?flow=955616',
-      time: '8:00 PM', duration: '2 hrs' }
+      time: '8:00 PM', duration: '2 hrs', infoUrl: 'fireworks' }
   );
 
   return sched;
@@ -547,7 +547,10 @@ function showEvents(dateKey, clickedCell) {
            ${e.time ? `<span class="badge rounded-pill border border-white border-opacity-75 text-white fw-normal">${e.time}</span>` : ''}
            ${e.duration ? `<span class="badge rounded-pill border border-white border-opacity-75 text-white fw-normal">${e.duration}</span>` : ''}
          </div>
-         <a href="${e.url}" class="btn btn-light btn-sm text-primary fw-semibold">Book Now</a>
+         <div class="d-flex gap-2">
+           <a href="${e.url}" class="btn btn-light btn-sm text-primary fw-semibold">Book Now</a>
+           ${e.infoUrl ? `<a href="${e.infoUrl}" class="btn btn-outline-light btn-sm">More Info</a>` : ''}
+         </div>
        </div>`
     ).join('');
 }
